@@ -28,7 +28,7 @@ const Menu = styled.header`
 
 const Menu__Content = styled.div`
   display: flex;
-  width: 64.94vw;
+  width: 70vw;
   justify-content: space-between;
 `;
 
@@ -43,7 +43,8 @@ const Menu__Logo = styled.img`
 `;
 
 const Menu__UL = styled.ul`
-  width: 28.5vw;
+  width: 22.34vw;
+  min-width: 429px;
   display: flex;
   margin-left: 5.8vw;
   justify-content: space-between;
@@ -63,9 +64,10 @@ const Menu__LI = styled.li`
 `;
 
 const Menu__Buttons = styled.div`
-  width: 20%;
+  width: 12.65vw;
   display: flex;
   color: #ffffff;
+  min-width: 243px;
   justify-content: space-between;
 
   button {
@@ -78,6 +80,7 @@ const Menu__Buttons = styled.div`
 
 const Menu__Signup = styled.button`
   width: 5.8vw;
+  min-width: 112px;
   background-color: transparent;
   border: 0.79px solid rgba(255, 255, 255, 1);
 `;
@@ -85,6 +88,7 @@ const Menu__Signup = styled.button`
 const Menu__Login = styled.button`
   width: 6vw;
   border: none;
+  min-width: 115px;
   background-color: #00aeff;
 
   img {
