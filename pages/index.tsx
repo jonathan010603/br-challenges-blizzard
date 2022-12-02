@@ -1,9 +1,9 @@
 import Head from "next/head";
 import styled from "styled-components";
 import Menu from "../components/Menu/Menu";
-import Banner from "../components/Banner";
+import BannerHero from "../components/BannerHero";
 import Download from "../components/Download/Download";
-import Games from "../components/Games/Games";
+import JogosExclusivos from "../components/JogosExclusivos";
 
 const Container = styled.main`
   width: 100%;
@@ -20,8 +20,8 @@ const Home = () => {
       </Head>
       <Container>
         <Menu />
-        <Banner />
-        <Games />
+        <BannerHero />
+        <JogosExclusivos />
         <Download />
       </Container>
     </>

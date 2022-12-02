@@ -33,7 +33,7 @@ const Menu = () => {
   );
 };
 
-const Menu__Container = styled.header`
+const Menu__Container = styled.section`
   z-index: 3;
   width: 100%;
   display: flex;

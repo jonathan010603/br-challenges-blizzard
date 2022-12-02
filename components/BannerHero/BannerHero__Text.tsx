@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { bannerGamesData } from "../../data/bannerGamesData";
+import { BannerHeroData } from "../../data/BannerHeroData";
 
 interface IProps {
   highlightedGame: number;
@@ -9,14 +9,14 @@ const Banner__Text = ({ highlightedGame }: IProps) => {
   return (
     <Container>
       <Banner__MainText>
-        {bannerGamesData[highlightedGame].mainText}
+        {BannerHeroData[highlightedGame].mainText}
       </Banner__MainText>
       <Banner__SubText>
-        {bannerGamesData[highlightedGame].subText}
+        {BannerHeroData[highlightedGame].subText}
       </Banner__SubText>
-      <Banner__button>
+      <Banner__button selectedGame={highlightedGame}>
         <img src="/assets/ui/login.png" />
-        Jogue agora
+        {highlightedGame === 0 ? "Jogue agora" : "Reserve agora na pré-venda"}
       </Banner__button>
     </Container>
   );
@@ -50,7 +50,7 @@ const Banner__MainText = styled.span`
     max-width: 350px;
   }
 
-  @media only screen and (max-width: 490px) {
+  @media only screen and (max-width: 560px) {
     font-size: 40px;
     max-width: 283px;
   }
@@ -74,36 +74,46 @@ const Banner__SubText = styled.span`
   @media only screen and (max-width: 690px) {
     max-width: 500px;
   }
-  
-  @media only screen and (max-width: 490px) {
+
+  @media only screen and (max-width: 559px) {
     max-width: 283px;
   }
 
   @media only screen and (max-width: 340px) {
     font-size: 15px;
   }
-  
+
   @media only screen and (max-width: 320px) {
     font-size: 12px;
     max-width: 260px;
   }
 `;
 
-const Banner__button = styled.button`
+interface IButtonProps {
+  selectedGame: number;
+}
+
+const Banner__button = styled.button<IButtonProps>`
   border-radius: 4px;
   margin-top: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 10.41vw;
+  width: ${(p) => (p.selectedGame === 0 ? "10.41vw" : "22.98vw")};
   height: 52px;
   border: none;
   color: #ffffff;
-  min-width: 200px;
+  min-width: ${(p) => (p.selectedGame === 0 ? "200px" : "283px")};
+  max-width: 331px;
   background-color: #00aeff;
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
+
+  @media only screen and (max-width: 340px) {
+    font-size: 12px;
+    min-width: ${(p) => (p.selectedGame === 0 ? "200px" : "230px")};
+  }
 
   img {
     width: 24px;

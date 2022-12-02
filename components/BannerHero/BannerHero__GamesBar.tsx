@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction } from "react";
 import styled from "styled-components";
-import { bannerGamesData } from "../../data/bannerGamesData";
+import { BannerHeroData } from "../../data/BannerHeroData";
 
 interface IProps {
   setHighlight: Dispatch<SetStateAction<number>>;
@@ -9,11 +9,11 @@ interface IProps {
 const Banner__GamesBar = ({ setHighlight }: IProps) => {
   return (
     <Container>
-      <img src={bannerGamesData[0].icon} onClick={() => setHighlight(0)} />
-      <img src={bannerGamesData[1].icon} onClick={() => setHighlight(1)} />
-      <img src={bannerGamesData[2].icon} onClick={() => setHighlight(2)} />
-      <img src={bannerGamesData[3].icon} />
-      <img src={bannerGamesData[4].icon} />
+      <img src={BannerHeroData[0].icon} onClick={() => setHighlight(0)} />
+      <img src={BannerHeroData[1].icon} onClick={() => setHighlight(1)} />
+      <img src={BannerHeroData[2].icon} onClick={() => setHighlight(2)} />
+      <img src={BannerHeroData[3].icon} />
+      <img src={BannerHeroData[4].icon} />
     </Container>
   );
 };

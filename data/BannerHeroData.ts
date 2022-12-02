@@ -1,4 +1,4 @@
-export const bannerGamesData = [
+export const BannerHeroData = [
   {
     animationCover: "/assets/banner-hero/games/diablo-animation-cover.png",
     animationGif: "/assets/banner-hero/games/diablo-animation.gif",

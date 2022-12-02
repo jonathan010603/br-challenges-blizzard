@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { bannerGamesData } from "../../data/bannerGamesData";
+import { BannerHeroData } from "../../data/BannerHeroData";
 
 interface IProps {
   highlightedGame: number;
@@ -10,19 +10,19 @@ const Banner__TrailerAndLogo = ({ highlightedGame }: IProps) => {
     <Container>
       <img
         className="Banner__Logo"
-        src={bannerGamesData[highlightedGame].logo}
+        src={BannerHeroData[highlightedGame].logo}
       />
       <Trailer>
-        <span>ASSISTA O TRAILER</span>
+        <span>ASSISTA AO TRAILER</span>
         <img
-          src={bannerGamesData[highlightedGame].animationCover}
+          src={BannerHeroData[highlightedGame].animationCover}
           onMouseOver={(e: any) =>
             (e.currentTarget.src =
-              bannerGamesData[highlightedGame].animationGif)
+              BannerHeroData[highlightedGame].animationGif)
           }
           onMouseOut={(e: any) =>
             (e.currentTarget.src =
-              bannerGamesData[highlightedGame].animationCover)
+              BannerHeroData[highlightedGame].animationCover)
           }
         />
       </Trailer>

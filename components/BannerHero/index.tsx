@@ -1,32 +1,32 @@
 import { ReactNode, useState } from "react";
 import styled from "styled-components";
-import { bannerGamesData } from "../../data/bannerGamesData";
-import Banner__GamesBar from "./Banner__GamesBar";
-import Banner__Text from "./Banner__Text";
-import Banner__TrailerAndLogo from "./Banner__TrailerAndLogo";
+import { BannerHeroData } from "../../data/BannerHeroData";
+import BannerHero__GamesBar from "./BannerHero__GamesBar";
+import BannerHero__Text from "./BannerHero__Text";
+import BannerHero__TrailerAndLogo from "./BannerHero__TrailerAndLogo";
 
-interface IBannerBG__Props {
+interface IBannerHeroBG__Props {
   selectedIcon: number;
 }
 
-const Banner = () => {
+const BannerHero = () => {
   const [selectedGame, setSelectedGame] = useState(0);
   return (
-    <Banner__Container>
-      <Banner__BG selectedIcon={selectedGame}></Banner__BG>
-      <Banner__Gradient></Banner__Gradient>
-      <Banner__Content>
-        <Banner__GamesBar setHighlight={setSelectedGame} />
-        <Banner__TextAndTrailer>
-          <Banner__Text highlightedGame={selectedGame} />
-          <Banner__TrailerAndLogo highlightedGame={selectedGame} />
-        </Banner__TextAndTrailer>
-      </Banner__Content>
-    </Banner__Container>
+    <BannerHero__Container>
+      <BannerHero__BG selectedIcon={selectedGame}></BannerHero__BG>
+      <BannerHero__Gradient></BannerHero__Gradient>
+      <BannerHero__Content>
+        <BannerHero__GamesBar setHighlight={setSelectedGame} />
+        <BannerHero__TextAndTrailer>
+          <BannerHero__Text highlightedGame={selectedGame} />
+          <BannerHero__TrailerAndLogo highlightedGame={selectedGame} />
+        </BannerHero__TextAndTrailer>
+      </BannerHero__Content>
+    </BannerHero__Container>
   );
 };
 
-const Banner__Container = styled.section`
+const BannerHero__Container = styled.section`
   width: 100%;
   height: 100%;
   min-height: 500px;
@@ -35,17 +35,17 @@ const Banner__Container = styled.section`
   padding-bottom: 9.64vh;
 `;
 
-const Banner__BG = styled.section<IBannerBG__Props>`
+const BannerHero__BG = styled.section<IBannerHeroBG__Props>`
   z-index: 1;
   width: 100%;
   height: 100%;
   min-height: 500px;
   position: absolute;
   background-size: cover;
-  background-image: url(${(p) => bannerGamesData[p.selectedIcon].bg});
+  background-image: url(${(p) => BannerHeroData[p.selectedIcon].bg});
 `;
 
-const Banner__Gradient = styled.div`
+const BannerHero__Gradient = styled.div`
   z-index: 2;
   width: 100%;
   height: 100%;
@@ -60,7 +60,7 @@ const Banner__Gradient = styled.div`
   opacity: 0.5;
 `;
 
-const Banner__Content = styled.div`
+const BannerHero__Content = styled.div`
   width: 100%;
   height: 64.53vh;
   padding: 0 15.52vw;
@@ -81,7 +81,7 @@ const Banner__Content = styled.div`
   }
 `;
 
-const Banner__TextAndTrailer = styled.div`
+const BannerHero__TextAndTrailer = styled.div`
   z-index: 10;
   display: flex;
   margin-top: 38.04vh;
@@ -102,4 +102,4 @@ const Banner__TextAndTrailer = styled.div`
   }
 `;
 
-export default Banner;
+export default BannerHero;
