@@ -45,12 +45,20 @@ const JogosExclusivos__Container = styled.section`
 
 const JogosExclusivos__TopBar = styled.div`
   width: 100%;
-  height: 9.5vh;
+  height: 70px;
   display: flex;
   margin-top: 11.54vh;
 
+  @media only screen and (max-width: 375px) {
+    height: 62px;
+  }
+
   @media only screen and (max-width: 760px) {
     justify-content: space-between;
+  }
+
+  @media only screen and (max-width: 375px) {
+    height: 62px;
   }
 
   .JogosExclusivos__Label {
