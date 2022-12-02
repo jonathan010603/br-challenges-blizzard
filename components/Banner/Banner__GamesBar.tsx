@@ -30,6 +30,12 @@ const Container = styled.div`
     width: 48px;
     height: 48px;
   }
+
+  @media only screen and (max-width: 1112px) {
+    flex-direction: row;
+    margin-top: 7.2vh;
+    width: 41.66vw;
+  }
 `;
 
 export default Banner__GamesBar;

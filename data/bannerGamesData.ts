@@ -5,7 +5,7 @@ export const bannerGamesData = [
     logo: "/assets/banner-hero/games/diablo-logo.png",
     bg: "/assets/banner-hero/games/diablo-bg.png",
     icon: "/assets/banner-hero/icons/game-1.png",
-    mainText: "Retorne à\nescuridão com o\ngame Diablo IV",
+    mainText: "Retorne à escuridão com o game Diablo IV",
     subText: "O retorno de Lilith traz uma era de escuridão e sofrimento"
   },
   {
@@ -14,7 +14,7 @@ export const bannerGamesData = [
     logo: "/assets/banner-hero/games/hearthstone-logo.png",
     bg: "/assets/banner-hero/games/hearthstone-bg.png",
     icon: "/assets/banner-hero/icons/game-2.png",
-    mainText: "Novo pacote de\nexpansão de\nHearthstone",
+    mainText: "Novo pacote de expansão de Hearthstone",
     subText: "A Horda e a Aliança se encontraram no Vale Alterac para lutar"
   },
   {
@@ -23,7 +23,7 @@ export const bannerGamesData = [
     logo: "/assets/banner-hero/games/wow-logo.png",
     bg: "/assets/banner-hero/games/wow-bg.png",
     icon: "/assets/banner-hero/icons/game-3.png",
-    mainText: "Desbrave as\nTerras Sombrias\nem Shadowlands!",
+    mainText: "Desbrave as Terras Sombrias em Shadowlands!",
     subText: "O que jaz além do mundo que você conhece?"
   },
   {

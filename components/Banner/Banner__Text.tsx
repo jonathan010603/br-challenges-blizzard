@@ -23,18 +23,46 @@ const Banner__Text = ({ highlightedGame }: IProps) => {
 };
 
 const Container = styled.div`
-  z-index: 10;
   display: flex;
-  margin-left: 8.33vw;
-  margin-top: 28.12vh;
+  margin-top: 4.6vh;
   flex-direction: column;
+
+  @media only screen and (max-width: 1112px) {
+    margin-top: 0;
+  }
 `;
 
 const Banner__MainText = styled.span`
   font-weight: 700;
   font-size: 64px;
+  max-width: 600px;
   line-height: 110.2%;
   white-space: pre-line;
+  z-index: 11;
+
+  @media only screen and (max-width: 690px) {
+    font-size: 50px;
+    max-width: 350px;
+  }
+
+  @media only screen and (max-width: 690px) {
+    font-size: 50px;
+    max-width: 350px;
+  }
+
+  @media only screen and (max-width: 490px) {
+    font-size: 40px;
+    max-width: 283px;
+  }
+
+  @media only screen and (max-width: 340px) {
+    font-size: 30px;
+    max-width: 250px;
+  }
+
+  @media only screen and (max-width: 1112px) and (max-height: 599px) and (orientation: landscape) {
+    font-size: 35px;
+  }
 `;
 
 const Banner__SubText = styled.span`
@@ -42,6 +70,23 @@ const Banner__SubText = styled.span`
   font-weight: 300;
   font-size: 18px;
   line-height: 27px;
+
+  @media only screen and (max-width: 690px) {
+    max-width: 500px;
+  }
+  
+  @media only screen and (max-width: 490px) {
+    max-width: 283px;
+  }
+
+  @media only screen and (max-width: 340px) {
+    font-size: 15px;
+  }
+  
+  @media only screen and (max-width: 320px) {
+    font-size: 12px;
+    max-width: 260px;
+  }
 `;
 
 const Banner__button = styled.button`

@@ -8,13 +8,22 @@ interface IProps {
 const Banner__TrailerAndLogo = ({ highlightedGame }: IProps) => {
   return (
     <Container>
-      <img src={bannerGamesData[highlightedGame].logo} />
+      <img
+        className="Banner__Logo"
+        src={bannerGamesData[highlightedGame].logo}
+      />
       <Trailer>
         <span>ASSISTA O TRAILER</span>
         <img
           src={bannerGamesData[highlightedGame].animationCover}
-          onMouseOver={e => e.currentTarget.src = bannerGamesData[highlightedGame].animationGif}
-          onMouseOut={e =>e.currentTarget.src = bannerGamesData[highlightedGame].animationCover}
+          onMouseOver={(e: any) =>
+            (e.currentTarget.src =
+              bannerGamesData[highlightedGame].animationGif)
+          }
+          onMouseOut={(e: any) =>
+            (e.currentTarget.src =
+              bannerGamesData[highlightedGame].animationCover)
+          }
         />
       </Trailer>
     </Container>
@@ -23,13 +32,27 @@ const Banner__TrailerAndLogo = ({ highlightedGame }: IProps) => {
 
 const Container = styled.div`
   z-index: 10;
-  height: 100%;
+  height: 64.53vh;
   display: flex;
   margin-left: auto;
-  margin-top: 37vh;
   align-items: center;
   flex-direction: column;
   justify-content: space-between;
+
+  .Banner__Logo {
+    max-width: 280px;
+  }
+
+  @media only screen and (max-width: 1112px) {
+    position: absolute;
+    right: 4vw;
+    top: -9vh;
+    height: 72.96vh;
+  }
+
+  @media only screen and (max-width: 767px) {
+    display: none;
+  }
 `;
 
 const Trailer = styled.div`
