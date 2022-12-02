@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { bannerGamesData } from "../../data/bannerGamesData";
 import Banner__GamesBar from "./Banner__GamesBar";
 import Banner__Text from "./Banner__Text";
+import Banner__TrailerAndLogo from "./Banner__TrailerAndLogo";
 
 interface IBannerBG__Props {
   selectedIcon: number;
@@ -17,6 +18,7 @@ const Banner = () => {
       <Banner__Content>
         <Banner__GamesBar setHighlight={setSelectedGame} />
         <Banner__Text highlightedGame={selectedGame} />
+        <Banner__TrailerAndLogo highlightedGame={selectedGame} />
       </Banner__Content>
     </Banner__Container>
   );
@@ -52,6 +54,7 @@ const Banner__Gradient = styled.div`
 
 const Banner__Content = styled.div`
   width: 100%;
+  height: 64.53vh;
   padding: 0 15.52vw;
   display: flex;
   align-items: center;

@@ -20,6 +20,7 @@ const Banner__GamesBar = ({ setHighlight }: IProps) => {
 
 const Container = styled.div`
   height: 43.47vh;
+  margin-top: 35vh;
   justify-content: space-between;
   display: flex;
   flex-direction: column;

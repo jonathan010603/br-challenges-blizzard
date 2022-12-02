@@ -23,9 +23,10 @@ const Banner__Text = ({ highlightedGame }: IProps) => {
 };
 
 const Container = styled.div`
-  display: flex;
   z-index: 10;
   display: flex;
+  margin-left: 8.33vw;
+  margin-top: 28.12vh;
   flex-direction: column;
 `;
 
