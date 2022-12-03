@@ -11,6 +11,7 @@ const Container = styled.main`
 `;
 
 const Home = () => {
+
   return (
     <>
       <Head>
