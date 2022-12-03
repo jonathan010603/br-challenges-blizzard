@@ -75,6 +75,10 @@ const JogosExclusivos__Wrapper = styled.div`
   @media only screen and (max-width: 999px) {
     row-gap: 12vh;
   }
+  
+  @media only screen and (max-width: 999px) and (max-height: 680px) {
+    row-gap: 25vh;
+  }
 
   @media only screen and (max-width: 768px) {
     row-gap: 5.69vh;
@@ -82,6 +86,14 @@ const JogosExclusivos__Wrapper = styled.div`
 
   @media only screen and (max-width: 680px) {
     row-gap: 13vh;
+  }
+  
+  @media only screen and (max-width: 680px) and (max-height: 700px) {
+    row-gap: 25vh;
+  }
+  
+  @media only screen and (max-width: 680px) and (max-height: 400px) {
+    row-gap: 35vh;
   }
 
   @media only screen and (max-width: 540px) {
