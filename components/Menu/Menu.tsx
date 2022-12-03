@@ -45,7 +45,11 @@ const Menu__Container = styled.section`
   border-bottom: 1.5px solid rgba(255, 255, 255, 0.1);
 
   @media only screen and (max-width: 1470px) {
-    padding: 0 5.83vw;
+    padding: 0 7.77vw;
+  }
+  
+  @media only screen and (max-width: 1112px) {
+    padding: 0 6.5vw 0 5.85vw;
   }
 
   @media only screen and (max-width: 1112px) and (max-height: 599px) and (orientation: landscape) {
@@ -63,7 +67,7 @@ const Menu__Content = styled.div`
     height: 18.67px;
     margin-left: 11.62vw;
 
-    @media only screen and (min-width: 971px) {
+    @media only screen and (min-width: 1112px) {
       display: none;
     }
 
@@ -94,7 +98,7 @@ const Menu__UL = styled.ul`
     margin-left: 6.3vw;
   }
 
-  @media only screen and (max-width: 970px) {
+  @media only screen and (max-width: 1112px) {
     display: none;
   }
 `;

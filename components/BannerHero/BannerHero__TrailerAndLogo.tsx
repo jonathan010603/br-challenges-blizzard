@@ -45,7 +45,7 @@ const Container = styled.div`
 
   @media only screen and (max-width: 1112px) {
     position: absolute;
-    right: 4vw;
+    right: 2.5vw;
     top: -9vh;
     height: 72.96vh;
   }

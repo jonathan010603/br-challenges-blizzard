@@ -69,12 +69,12 @@ const BannerHero__Content = styled.div`
   align-items: center;
 
   @media only screen and (max-width: 1470px) {
-      padding: 0 5.83vw;
+    padding: 0 6.94vw 0 7.77vw;
   }
 
   @media only screen and (max-width: 1112px) {
     padding: 0;
-    padding-left: 7.55vw;
+    padding: 0 4.03vw 0 7.55vw;
     flex-direction: column-reverse;
     align-items: flex-start;
     margin-top: 23vh;
@@ -85,7 +85,7 @@ const BannerHero__TextAndTrailer = styled.div`
   z-index: 10;
   display: flex;
   margin-top: 38.04vh;
-  margin-left: 9vW;
+  margin-left: 9vw;
   align-items: flex-start;
   justify-content: space-between;
   width: 100%;

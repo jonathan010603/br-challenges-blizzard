@@ -28,7 +28,7 @@ const JogosExclusivos = () => {
             ImageSource={game.image}
           />
         ))}
-        <JogosExclusivos__GameCard />
+        <JogosExclusivos__GameCard ImageSource={data[0].image} />
       </JogosExclusivos__Wrapper>
     </JogosExclusivos__Container>
   );
@@ -42,24 +42,53 @@ const JogosExclusivos__Container = styled.section`
   align-items: center;
   margin-bottom: 14.57vh;
 
-  @media only screen and (max-width: 1440px) {
-    padding: 0 7.22vw;
+  @media only screen and (max-width: 1470px) {
+    padding: 0 7.77vw;
   }
 
   @media only screen and (max-width: 1112px) {
-    padding-left: 7.55vw;
+    padding: 0 6.5vw;
+  }
+
+  @media only screen and (max-width: 768px) {
+    padding: 0 6.1vw;
+  }
+
+  @media only screen and (max-width: 375px) {
+    padding: 0 6.4vw;
   }
 `;
 
 const JogosExclusivos__Wrapper = styled.div`
+  gap: 1.66vw;
   width: 100%;
   display: flex;
-  gap: 1.66vw;
+  row-gap: 48px;
   flex-wrap: wrap;
+  min-width: 243px;
+  justify-content: space-between;
 
-  @media only screen and (max-width: 1470px) {
-    gap: 2.22vw;
-    row-gap: 49px;
+  @media only screen and (min-width: 1000px) and (max-width: 1112px) {
+    row-gap: 15vh;
+  }
+
+  @media only screen and (max-width: 999px) {
+    row-gap: 12vh;
+  }
+
+  @media only screen and (max-width: 768px) {
+    row-gap: 5.69vh;
+  }
+
+  @media only screen and (max-width: 680px) {
+    row-gap: 13vh;
+  }
+
+  @media only screen and (max-width: 540px) {
+    row-gap: 24px;
+  }
+
+  @media only screen and (max-width: 375px) {
   }
 `;
 

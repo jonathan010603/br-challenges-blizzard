@@ -53,7 +53,7 @@ const Container = styled.div`
       margin-top: 8px;
     }
 
-    @media only screen and (max-width: 930px) {
+    @media only screen and (max-width: 1112px) {
       display: none;
     }
   }
@@ -102,7 +102,7 @@ const JogosExclusivos__Title = styled.h1`
     margin: 0 0 0 11.18vw;
   }
 
-  @media only screen and (max-width: 930px) {
+  @media only screen and (max-width: 1112px) {
     margin: 0;
   }
 
