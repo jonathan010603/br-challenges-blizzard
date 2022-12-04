@@ -13,8 +13,8 @@ const BannerHero = () => {
   const [selectedGame, setSelectedGame] = useState(0);
   return (
     <BannerHero__Container>
-      <BannerHero__BG selectedIcon={selectedGame}></BannerHero__BG>
-      <BannerHero__Gradient></BannerHero__Gradient>
+      <BannerHero__BG selectedIcon={selectedGame} />
+      <BannerHero__Gradient />
       <BannerHero__Content>
         <BannerHero__GamesBar setHighlight={setSelectedGame} />
         <BannerHero__TextAndTrailer>

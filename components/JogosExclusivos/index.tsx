@@ -28,7 +28,7 @@ const JogosExclusivos = () => {
             ImageSource={game.image}
           />
         ))}
-        <JogosExclusivos__GameCard ImageSource={data[0].image} />
+        {data && <JogosExclusivos__GameCard ImageSource={data[0].image} />}
       </JogosExclusivos__Wrapper>
     </JogosExclusivos__Container>
   );
@@ -75,7 +75,7 @@ const JogosExclusivos__Wrapper = styled.div`
   @media only screen and (max-width: 999px) {
     row-gap: 12vh;
   }
-  
+
   @media only screen and (max-width: 999px) and (max-height: 680px) {
     row-gap: 25vh;
   }
@@ -87,11 +87,11 @@ const JogosExclusivos__Wrapper = styled.div`
   @media only screen and (max-width: 680px) {
     row-gap: 13vh;
   }
-  
+
   @media only screen and (max-width: 680px) and (max-height: 700px) {
     row-gap: 25vh;
   }
-  
+
   @media only screen and (max-width: 680px) and (max-height: 400px) {
     row-gap: 35vh;
   }

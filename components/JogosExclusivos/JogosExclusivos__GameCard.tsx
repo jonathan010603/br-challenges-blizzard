@@ -54,57 +54,6 @@ const JogosExclusivos__GameCard = ({
   );
 };
 
-const JogosExclusivos__SeeAll = styled.div`
-  border-radius: 4.3px;
-  border: 2px solid #212428;
-  display: flex;
-  width: 15.67vw;
-  height: 56.9vh;
-  flex-direction: column;
-  max-height: 433px;
-  min-height: 427.97px;
-  min-width: 230px;
-
-  @media only screen and (max-width: 1470px) {
-    width: 19.44vw;
-    height: 53vh;
-    max-height: 451px;
-    min-height: 355px;
-    min-width: 170px;
-  }
-
-  @media only screen and (max-width: 1112px) {
-    width: 26.26vw;
-    height: 50vh;
-    max-height: 423px;
-    min-height: 335px;
-    min-width: 170px;
-  }
-
-  @media only screen and (max-width: 1022px) {
-    height: 40vh;
-  }
-
-  @media only screen and (max-width: 768px) {
-    width: 26.26vw;
-    height: 46.44vh;
-  }
-
-  @media only screen and (max-width: 635px) {
-    width: 39vw;
-    height: 42vh;
-  }
-
-  @media only screen and (max-width: 540px) {
-    width: 40vw;
-    height: 34.39vh;
-  }
-
-  @media only screen and (max-width: 360px) {
-    height: 27vh;
-  }
-`;
-
 const Container = styled.div`
   display: flex;
   width: 15.67vw;

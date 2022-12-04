@@ -2,7 +2,7 @@ import Head from "next/head";
 import styled from "styled-components";
 import Menu from "../components/Menu/Menu";
 import BannerHero from "../components/BannerHero";
-import Download from "../components/Download/Download";
+import Footer from "../components/Footer";
 import JogosExclusivos from "../components/JogosExclusivos";
 
 const Container = styled.main`
@@ -11,7 +11,6 @@ const Container = styled.main`
 `;
 
 const Home = () => {
-
   return (
     <>
       <Head>
@@ -23,7 +22,7 @@ const Home = () => {
         <Menu />
         <BannerHero />
         <JogosExclusivos />
-        <Download />
+        <Footer />
       </Container>
     </>
   );
