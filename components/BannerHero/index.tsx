@@ -1,6 +1,6 @@
 import { ReactNode, useState } from "react";
 import styled from "styled-components";
-import { BannerHeroData } from "../../data/BannerHeroData";
+import { BannerHeroData, transitionsTime } from "../../data/BannerHeroData";
 import BannerHero__GamesBar from "./BannerHero__GamesBar";
 import BannerHero__Text from "./BannerHero__Text";
 import BannerHero__TrailerAndLogo from "./BannerHero__TrailerAndLogo";
@@ -46,6 +46,7 @@ const BannerHero__BG = styled.section<IBannerHeroBG__Props>`
   position: absolute;
   background-size: cover;
   background-image: url(${(p) => BannerHeroData[p.selectedIcon].bg});
+  transition: all ${transitionsTime}s ease-out;
 `;
 
 const BannerHero__Gradient = styled.div`

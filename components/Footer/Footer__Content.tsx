@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
+import { transitionsTime } from "../../data/BannerHeroData";
 import useGetOS from "../../hooks/useGetOS";
 
 const Footer__Content = () => {
@@ -126,6 +127,12 @@ const Footer__DownloadBtn = styled.button`
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
+  cursor: pointer;
+  transition: all ${transitionsTime}s ease-out;
+
+  &:hover {
+    filter: brightness(75%);
+  }
 
   img {
     margin-right: 8px;

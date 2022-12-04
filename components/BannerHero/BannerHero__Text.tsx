@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { BannerHeroData } from "../../data/BannerHeroData";
+import { BannerHeroData, transitionsTime } from "../../data/BannerHeroData";
 
 interface IProps {
   highlightedGame: number;
@@ -69,6 +69,7 @@ const Banner__SubText = styled.span`
   font-weight: 300;
   font-size: 18px;
   line-height: 27px;
+  transition: all ${transitionsTime}s ease-out;
 
   @media only screen and (max-width: 690px) {
     max-width: 500px;
@@ -108,6 +109,12 @@ const Banner__button = styled.button<IButtonProps>`
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
+  cursor: pointer;
+  transition: all ${transitionsTime}s ease-out;
+
+  &:hover {
+    filter: brightness(75%);
+  }
 
   @media only screen and (max-width: 340px) {
     font-size: 12px;

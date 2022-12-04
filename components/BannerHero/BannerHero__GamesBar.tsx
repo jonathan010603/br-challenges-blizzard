@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction } from "react";
 import styled from "styled-components";
-import { BannerHeroData } from "../../data/BannerHeroData";
+import { BannerHeroData, transitionsTime } from "../../data/BannerHeroData";
 
 interface IProps {
   setHighlight: Dispatch<SetStateAction<number>>;
@@ -25,8 +25,8 @@ const Banner__GamesBar = ({ highlightedGame, setHighlight }: IProps) => {
         src={BannerHeroData[2].icon}
         onClick={() => setHighlight(2)}
       />
-      <img className="disabled" src={BannerHeroData[3].icon} />
-      <img className="disabled" src={BannerHeroData[4].icon} />
+      <img className="off" src={BannerHeroData[3].icon} />
+      <img className="off " src={BannerHeroData[4].icon} />
     </Container>
   );
 };
@@ -67,7 +67,17 @@ const Container = styled.div`
     width: 240px;
   }
 
-  .disabled {
+  .disabled,
+  .off {
+    cursor: pointer;
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    transition: all ${transitionsTime}s ease-out;
+
+    &:hover {
+      filter: grayscale(75%);
+      -webkit-filter: grayscale(60%);
+    }
   }
 `;
 

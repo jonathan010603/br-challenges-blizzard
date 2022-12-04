@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { transitionsTime } from "../../data/BannerHeroData";
 
 interface IProps {
   Name?: string;
@@ -58,6 +59,14 @@ const Container = styled.div`
   min-width: 230px;
   max-height: 500px;
   min-height: 504.97px;
+  transition: all ${transitionsTime}s ease-out;
+
+  &:hover {
+    cursor: pointer;
+    img {
+      filter: brightness(130%);
+    }
+  }
 
   @media only screen and (max-width: 1470px) {
     width: 19.44vw;
@@ -184,7 +193,7 @@ const JogosExclusivos__CoverAndLogo = styled.div`
       font-size: 14px;
       line-height: 21px;
     }
-    
+
     @media only screen and (max-width: 350px) {
       font-weight: 600;
       font-size: 11px;

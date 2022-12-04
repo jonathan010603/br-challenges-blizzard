@@ -17,8 +17,7 @@ const Banner__TrailerAndLogo = ({ highlightedGame }: IProps) => {
         <img
           src={BannerHeroData[highlightedGame].animationCover}
           onMouseOver={(e: any) =>
-            (e.currentTarget.src =
-              BannerHeroData[highlightedGame].animationGif)
+            (e.currentTarget.src = BannerHeroData[highlightedGame].animationGif)
           }
           onMouseOut={(e: any) =>
             (e.currentTarget.src =
@@ -71,6 +70,7 @@ const Trailer = styled.div`
     max-width: 280px;
     min-height: 173px;
     margin-top: 16px;
+    cursor: pointer;
   }
 `;
 

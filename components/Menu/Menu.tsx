@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { transitionsTime } from "../../data/BannerHeroData";
 
 const Menu = () => {
   return (
@@ -47,7 +48,7 @@ const Menu__Container = styled.section`
   @media only screen and (max-width: 1470px) {
     padding: 0 7.77vw;
   }
-  
+
   @media only screen and (max-width: 1112px) {
     padding: 0 6.5vw 0 5.85vw;
   }
@@ -105,9 +106,15 @@ const Menu__UL = styled.ul`
 
 const Menu__LI = styled.li`
   display: flex;
+  cursor: pointer;
   font-size: 14px;
   font-weight: 500;
   align-items: center;
+  transition: all ${transitionsTime}s ease-out;
+
+  &:hover {
+    color: rgba(255, 255, 255, 0.5);
+  }
 
   img {
     width: 10px;
@@ -126,10 +133,16 @@ const Menu__Buttons = styled.div`
 
   button {
     color: #ffffff;
+    cursor: pointer;
     font-size: 14px;
     font-weight: 500;
     min-height: 41px;
     border-radius: 3.15385px;
+    transition: all ${transitionsTime}s ease-out;
+
+    &:hover {
+      filter: brightness(75%);
+    }
   }
 
   @media only screen and (max-width: 560px) {
