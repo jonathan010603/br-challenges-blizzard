@@ -15,7 +15,6 @@ const Banner__Text = ({ highlightedGame }: IProps) => {
         {BannerHeroData[highlightedGame].subText}
       </Banner__SubText>
       <Banner__button selectedGame={highlightedGame}>
-        <img src="/assets/ui/login.png" />
         {highlightedGame === 0 ? "Jogue agora" : "Reserve agora na pré-venda"}
       </Banner__button>
     </Container>
@@ -99,11 +98,11 @@ const Banner__button = styled.button<IButtonProps>`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: ${(p) => (p.selectedGame === 0 ? "10.41vw" : "22.98vw")};
+  width: ${(p) => (p.selectedGame === 0 ? "8.75vw" : "21.32vw")};
   height: 52px;
   border: none;
   color: #ffffff;
-  min-width: ${(p) => (p.selectedGame === 0 ? "200px" : "283px")};
+  min-width: ${(p) => (p.selectedGame === 0 ? "168px" : "250px")};
   max-width: 331px;
   background-color: #00aeff;
   font-weight: 600;
@@ -112,7 +111,6 @@ const Banner__button = styled.button<IButtonProps>`
 
   @media only screen and (max-width: 340px) {
     font-size: 12px;
-    min-width: ${(p) => (p.selectedGame === 0 ? "200px" : "230px")};
   }
 
   img {

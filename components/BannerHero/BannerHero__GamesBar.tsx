@@ -4,16 +4,29 @@ import { BannerHeroData } from "../../data/BannerHeroData";
 
 interface IProps {
   setHighlight: Dispatch<SetStateAction<number>>;
+  highlightedGame: number;
 }
 
-const Banner__GamesBar = ({ setHighlight }: IProps) => {
+const Banner__GamesBar = ({ highlightedGame, setHighlight }: IProps) => {
   return (
     <Container>
-      <img src={BannerHeroData[0].icon} onClick={() => setHighlight(0)} />
-      <img src={BannerHeroData[1].icon} onClick={() => setHighlight(1)} />
-      <img src={BannerHeroData[2].icon} onClick={() => setHighlight(2)} />
-      <img src={BannerHeroData[3].icon} />
-      <img src={BannerHeroData[4].icon} />
+      <img
+        className={highlightedGame === 0 ? "" : "disabled"}
+        src={BannerHeroData[0].icon}
+        onClick={() => setHighlight(0)}
+      />
+      <img
+        className={highlightedGame === 1 ? "" : "disabled"}
+        src={BannerHeroData[1].icon}
+        onClick={() => setHighlight(1)}
+      />
+      <img
+        className={highlightedGame === 2 ? "" : "disabled"}
+        src={BannerHeroData[2].icon}
+        onClick={() => setHighlight(2)}
+      />
+      <img className="disabled" src={BannerHeroData[3].icon} />
+      <img className="disabled" src={BannerHeroData[4].icon} />
     </Container>
   );
 };
@@ -35,6 +48,26 @@ const Container = styled.div`
     flex-direction: row;
     margin-top: 7.2vh;
     width: 41.66vw;
+  }
+
+  @media only screen and (max-width: 768px) {
+    min-width: 304px;
+  }
+
+  @media only screen and (max-width: 720px) {
+    flex-direction: row;
+    margin-top: 6.52vh;
+    width: 81.06vw;
+  }
+
+  @media only screen and (max-width: 350px) {
+    flex-direction: row;
+    margin-top: 6.52vh;
+    min-width: 200px;
+    width: 240px;
+  }
+
+  .disabled {
   }
 `;
 

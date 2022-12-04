@@ -1,26 +1,38 @@
 import styled from "styled-components";
 import Footer__Content from "./Footer__Content";
+import Footer__Illustrations from "./Footer__Illustrations";
 
 const Footer = () => {
   return (
     <Footer__Container>
       <Footer__BG />
       <Footer__Gradient />
-      <Footer__Content />
+      <div className="Footer__Flexible">
+        <Footer__Content />
+        <Footer__Illustrations />
+      </div>
     </Footer__Container>
   );
 };
 
 const Footer__Container = styled.footer`
   width: 100%;
-  height: 100%;
-  background-color: yellow;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+
+  .Footer__Flexible {
+    display: flex;
+
+    @media only screen and (max-width: 680px) {
+      flex-direction: column;
+    }
+  }
 `;
 
 const Footer__BG = styled.section`
   z-index: 1;
   width: 100%;
-  height: 100%;
   min-height: 500px;
   position: absolute;
   background-size: cover;
@@ -30,7 +42,6 @@ const Footer__BG = styled.section`
 const Footer__Gradient = styled.div`
   z-index: 2;
   width: 100%;
-  height: 100%;
   position: absolute;
   min-height: 500px;
   background: radial-gradient(

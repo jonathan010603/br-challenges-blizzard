@@ -41,6 +41,7 @@ const Container = styled.div`
 
   .Banner__Logo {
     max-width: 280px;
+    min-height: 154px;
   }
 
   @media only screen and (max-width: 1112px) {

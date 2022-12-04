@@ -16,7 +16,10 @@ const BannerHero = () => {
       <BannerHero__BG selectedIcon={selectedGame} />
       <BannerHero__Gradient />
       <BannerHero__Content>
-        <BannerHero__GamesBar setHighlight={setSelectedGame} />
+        <BannerHero__GamesBar
+          highlightedGame={selectedGame}
+          setHighlight={setSelectedGame}
+        />
         <BannerHero__TextAndTrailer>
           <BannerHero__Text highlightedGame={selectedGame} />
           <BannerHero__TrailerAndLogo highlightedGame={selectedGame} />

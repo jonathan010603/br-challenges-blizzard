@@ -42,12 +42,8 @@ const JogosExclusivos__GameCard = ({
               </div>
             </div>
           </JogosExclusivos__CoverAndLogo>
-          <span className="JogosExclusivos__Name disabled">
-            easter egg gambiarra
-          </span>
-          <span className="JogosExclusivos__Category disabled">
-            easter egg gambiarra
-          </span>
+          <span className="JogosExclusivos__Name disabled">{"..."}</span>
+          <span className="JogosExclusivos__Category disabled">{"..."}</span>
         </Container>
       )}
     </>
@@ -89,11 +85,12 @@ const Container = styled.div`
     height: 42vh;
   }
 
-  @media only screen and (max-width: 540px) {
+  @media only screen and (max-width: 510px) {
     width: 40vw;
     height: 34.39vh;
     min-width: 110px;
     min-height: 210px;
+    max-height: 212px;
   }
 
   @media only screen and (max-width: 360px) {
@@ -132,7 +129,7 @@ const Container = styled.div`
 
   .JogosExclusivos__Category,
   .JogosExclusivos__Name {
-    @media only screen and (max-width: 540px) {
+    @media only screen and (max-width: 510px) {
       display: none;
     }
   }
@@ -185,6 +182,12 @@ const JogosExclusivos__CoverAndLogo = styled.div`
     @media only screen and (max-width: 450px) {
       font-weight: 600;
       font-size: 14px;
+      line-height: 21px;
+    }
+    
+    @media only screen and (max-width: 350px) {
+      font-weight: 600;
+      font-size: 11px;
       line-height: 21px;
     }
   }

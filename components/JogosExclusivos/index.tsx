@@ -22,6 +22,7 @@ const JogosExclusivos = () => {
       <JogosExclusivos__Wrapper>
         {data?.map((game: gameObject) => (
           <JogosExclusivos__GameCard
+            key={game.name}
             Name={game.name}
             Logo={game.logo}
             Category={game.category}
@@ -40,22 +41,21 @@ const JogosExclusivos__Container = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 14.57vh;
+  margin-bottom: 107.3px;
 
   @media only screen and (max-width: 1470px) {
     padding: 0 7.77vw;
+    margin-bottom: 117px;
   }
 
   @media only screen and (max-width: 1112px) {
     padding: 0 6.5vw;
-  }
-
-  @media only screen and (max-width: 768px) {
-    padding: 0 6.1vw;
+    margin-bottom: 87.67px;
   }
 
   @media only screen and (max-width: 375px) {
     padding: 0 6.4vw;
+    margin-bottom: 69.46px;
   }
 `;
 
