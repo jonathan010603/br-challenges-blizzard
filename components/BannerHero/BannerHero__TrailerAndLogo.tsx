@@ -43,7 +43,7 @@ const Container = styled.div`
     min-height: 154px;
   }
 
-  @media only screen and (max-width: 1112px) {
+  @media only screen and (max-width: 1200px) {
     position: absolute;
     right: 2.5vw;
     top: -9vh;
@@ -64,6 +64,10 @@ const Trailer = styled.div`
     font-size: 13px;
     font-weight: 300;
     line-height: 20px;
+
+    @media only screen and (max-width: 900px) {
+      display: none;
+    }
   }
 
   img {

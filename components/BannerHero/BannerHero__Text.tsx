@@ -28,7 +28,7 @@ const Container = styled.div`
   margin-top: 4.6vh;
   flex-direction: column;
 
-  @media only screen and (max-width: 1112px) {
+  @media only screen and (max-width: 1200px) {
     margin-top: 0;
   }
 `;
@@ -36,10 +36,14 @@ const Container = styled.div`
 const Banner__MainText = styled.span`
   font-weight: 700;
   font-size: 64px;
-  max-width: 600px;
+  max-width: 550px;
   line-height: 110.2%;
   white-space: pre-line;
   z-index: 11;
+
+  @media only screen and (max-width: 900px) {
+    max-width: 560px;
+  }
 
   @media only screen and (max-width: 690px) {
     font-size: 50px;
@@ -61,7 +65,11 @@ const Banner__MainText = styled.span`
     max-width: 250px;
   }
 
-  @media only screen and (max-width: 1112px) and (max-height: 599px) and (orientation: landscape) {
+  @media only screen and (max-width: 1200px) and (max-height: 667px) and (orientation: landscape) {
+    font-size: 50px;
+  }
+
+  @media only screen and (max-width: 1200px) and (max-height: 667px) and (orientation: landscape) {
     font-size: 35px;
   }
 `;

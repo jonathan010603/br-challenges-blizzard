@@ -48,30 +48,53 @@ export const BannerHeroData = [
   },
 ];
 
+export const BannerBgPositions = [
+  {
+    bgPosX: "40%",
+  },
+  {
+    bgPosX: "70%",
+  },
+  {
+    bgPosX: "65%",
+  },
+  {
+    bgPosX: "35%",
+  },
+  {
+    bgPosX: "40%",
+  },
+];
+
 export const BlueLineValues = [
   {
     w1920: "560px",
     w768: "320px",
     w375: "202px",
+    wFold: "140px",
   },
   {
     w1920: "920px",
     w768: "420px",
     w375: "250px",
+    wFold: "180px",
   },
   {
     w1920: "1149px",
     w768: "540px",
     w375: "300px",
+    wFold: "220px",
   },
   {
     w1920: "90%",
     w768: "650px",
     w375: "325px",
+    wFold: "240px",
   },
   {
     w1920: "100%",
     w768: "100%",
     w375: "100%",
+    wFold: "100%",
   },
 ];

@@ -52,7 +52,7 @@ const Container = styled.div`
     height: 48px;
   }
 
-  @media only screen and (max-width: 1112px) {
+  @media only screen and (max-width: 1200px) {
     flex-direction: row;
     margin-top: 7.2vh;
     width: 41.66vw;

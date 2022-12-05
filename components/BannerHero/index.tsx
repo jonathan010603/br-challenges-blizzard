@@ -1,6 +1,7 @@
 import { ReactNode, useState } from "react";
 import styled from "styled-components";
 import {
+  BannerBgPositions,
   BannerHeroData,
   BlueLineValues,
   transitionsTime,
@@ -57,6 +58,10 @@ const BannerHero__BG = styled.section<IBannerHeroBG__Props>`
   background-size: cover;
   background-image: url(${(p) => BannerHeroData[p.selectedIcon].bg});
   transition: all ${transitionsTime}s ease-out;
+
+  @media only screen and (max-width: 1200px) {
+    background-position-x: ${(p) => BannerBgPositions[p.selectedIcon].bgPosX};
+  }
 `;
 
 const BannerHero__Gradient = styled.div`
@@ -86,12 +91,16 @@ const BannerHero__Content = styled.div`
     padding: 0 6.94vw 0 7.77vw;
   }
 
-  @media only screen and (max-width: 1112px) {
+  @media only screen and (max-width: 1200px) {
     padding: 0;
     padding: 0 4.03vw 0 7.55vw;
     flex-direction: column-reverse;
     align-items: flex-start;
     margin-top: 23vh;
+  }
+  
+  @media only screen and (max-width: 680px) {
+    padding: 0 4.03vw 0 5.85vw;
   }
 `;
 
@@ -105,13 +114,17 @@ const BannerHero__TextAndTrailer = styled.div`
   width: 100%;
   position: relative;
 
-  @media only screen and (max-width: 1112px) {
+  @media only screen and (max-width: 1200px) {
     flex-direction: column-reverse;
     align-items: flex-start;
     margin-left: 0;
   }
 
-  @media only screen and (min-width: 768px) and (max-width: 1112px) and (min-height: 830px) {
+  @media only screen and (max-width: 1200px) and (max-height: 667px) and (orientation: landscape) {
+    margin-top: 45vh;
+  }
+
+  @media only screen and (min-width: 768px) and (max-width: 1200px) and (min-height: 830px) {
     margin-top: 0;
   }
 `;
@@ -122,14 +135,19 @@ const Banner__BlueLine = styled.div<IBanner__BlueLineProps>`
   z-index: 10;
   position: absolute;
   background: #00aeff;
+  transition: all ${transitionsTime}s ease-out;
   width: ${(p) => BlueLineValues[p.selectedIcon].w1920};
 
-  @media only screen and (max-width: 1112px) {
+  @media only screen and (max-width: 1200px) {
     width: ${(p) => BlueLineValues[p.selectedIcon].w768};
   }
 
   @media only screen and (max-width: 680px) {
     width: ${(p) => BlueLineValues[p.selectedIcon].w375};
+  }
+
+  @media only screen and (max-width: 350px) {
+    width: ${(p) => BlueLineValues[p.selectedIcon].wFold};
   }
 `;
 

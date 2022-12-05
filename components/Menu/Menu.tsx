@@ -4,6 +4,7 @@ import { transitionsTime } from "../../data/BannerHeroData";
 const Menu = () => {
   return (
     <Menu__Container>
+      <Menu__BlueLine></Menu__BlueLine>
       <Menu__Content>
         <Menu__Links>
           <Menu__Logo src="/assets/logo-blizzard.png" />
@@ -49,11 +50,11 @@ const Menu__Container = styled.section`
     padding: 0 7.77vw;
   }
 
-  @media only screen and (max-width: 1112px) {
+  @media only screen and (max-width: 1200px) {
     padding: 0 6.5vw 0 5.85vw;
   }
 
-  @media only screen and (max-width: 1112px) and (max-height: 599px) and (orientation: landscape) {
+  @media only screen and (max-width: 1200px) and (max-height: 599px) and (orientation: landscape) {
     height: 20%;
   }
 `;
@@ -61,6 +62,7 @@ const Menu__Container = styled.section`
 const Menu__Content = styled.div`
   width: 100%;
   display: flex;
+  position: relative;
   align-items: center;
 
   .Banner__burger {
@@ -68,7 +70,7 @@ const Menu__Content = styled.div`
     height: 18.67px;
     margin-left: 11.62vw;
 
-    @media only screen and (min-width: 1112px) {
+    @media only screen and (min-width: 1200px) {
       display: none;
     }
 
@@ -84,22 +86,31 @@ const Menu__Links = styled.div`
 `;
 
 const Menu__Logo = styled.img`
-  width: 88px;
+  width: 115.7px;
   height: 40px;
+
+  @media only screen and (max-width: 1470px) {
+    width: 86.77px;
+  }
+
+  @media only screen and (max-width: 680px) {
+    width: 69.42px;
+    height: 32px;
+  }
 `;
 
 const Menu__UL = styled.ul`
   width: 22.34vw;
   min-width: 429px;
   display: flex;
-  margin-left: 5.8vw;
+  margin-left: 5.84vw;
   justify-content: space-between;
 
   @media only screen and (max-width: 1470px) {
     margin-left: 6.3vw;
   }
 
-  @media only screen and (max-width: 1112px) {
+  @media only screen and (max-width: 1200px) {
     display: none;
   }
 `;
@@ -168,6 +179,15 @@ const Menu__Login = styled.button`
     height: 14.19px;
     margin-right: 10px;
   }
+`;
+
+const Menu__BlueLine = styled.div`
+  bottom: -1.5px;
+  width: 43px;
+  height: 1.5px;
+  z-index: 10;
+  position: absolute;
+  background: #00aeff;
 `;
 
 export default Menu;
