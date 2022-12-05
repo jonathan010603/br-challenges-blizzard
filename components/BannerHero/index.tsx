@@ -1,11 +1,19 @@
 import { ReactNode, useState } from "react";
 import styled from "styled-components";
-import { BannerHeroData, transitionsTime } from "../../data/BannerHeroData";
+import {
+  BannerHeroData,
+  BlueLineValues,
+  transitionsTime,
+} from "../../data/BannerHeroData";
 import BannerHero__GamesBar from "./BannerHero__GamesBar";
 import BannerHero__Text from "./BannerHero__Text";
 import BannerHero__TrailerAndLogo from "./BannerHero__TrailerAndLogo";
 
 interface IBannerHeroBG__Props {
+  selectedIcon: number;
+}
+
+interface IBanner__BlueLineProps {
   selectedIcon: number;
 }
 
@@ -25,6 +33,7 @@ const BannerHero = () => {
           <BannerHero__TrailerAndLogo highlightedGame={selectedGame} />
         </BannerHero__TextAndTrailer>
       </BannerHero__Content>
+      <Banner__BlueLine selectedIcon={selectedGame} />
     </BannerHero__Container>
   );
 };
@@ -33,6 +42,7 @@ const BannerHero__Container = styled.section`
   width: 100%;
   height: 100%;
   min-height: 500px;
+  position: relative;
   display: flex;
   flex-direction: column;
   padding-bottom: 9.64vh;
@@ -103,6 +113,23 @@ const BannerHero__TextAndTrailer = styled.div`
 
   @media only screen and (min-width: 768px) and (max-width: 1112px) and (min-height: 830px) {
     margin-top: 0;
+  }
+`;
+
+const Banner__BlueLine = styled.div<IBanner__BlueLineProps>`
+  bottom: 0;
+  height: 3px;
+  z-index: 10;
+  position: absolute;
+  background: #00aeff;
+  width: ${(p) => BlueLineValues[p.selectedIcon].w1920};
+
+  @media only screen and (max-width: 1112px) {
+    width: ${(p) => BlueLineValues[p.selectedIcon].w768};
+  }
+
+  @media only screen and (max-width: 680px) {
+    width: ${(p) => BlueLineValues[p.selectedIcon].w375};
   }
 `;
 

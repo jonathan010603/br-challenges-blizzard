@@ -34,7 +34,7 @@ export const BannerHeroData = [
     logo: "/assets/banner-hero/games/diablo3-logo.png",
     bg: "/assets/banner-hero/games/diablo3-bg.jpg",
     icon: "/assets/banner-hero/icons/game-4.png",
-    mainText: "A luz clama por seu retorno fiel a Santuário.",
+    mainText: "A luz clama por seu retorno fiel a Santuário",
     subText: "Temporada 27: Chamado da Luz",
   },
   {
@@ -45,5 +45,33 @@ export const BannerHeroData = [
     icon: "/assets/banner-hero/icons/game-5.png",
     mainText: "O supremo jogo de estratégia em tempo real",
     subText: "Conquiste a galáxia como terrano, zerg ou protoss",
+  },
+];
+
+export const BlueLineValues = [
+  {
+    w1920: "560px",
+    w768: "320px",
+    w375: "202px",
+  },
+  {
+    w1920: "920px",
+    w768: "420px",
+    w375: "250px",
+  },
+  {
+    w1920: "1149px",
+    w768: "540px",
+    w375: "300px",
+  },
+  {
+    w1920: "90%",
+    w768: "650px",
+    w375: "325px",
+  },
+  {
+    w1920: "100%",
+    w768: "100%",
+    w375: "100%",
   },
 ];
