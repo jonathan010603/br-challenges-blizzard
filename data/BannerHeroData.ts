@@ -29,9 +29,21 @@ export const BannerHeroData = [
     subText: "O que jaz além do mundo que você conhece?",
   },
   {
+    animationCover: "/assets/banner-hero/games/diablo3-animation-cover.jpg",
+    animationGif: "/assets/banner-hero/games/diablo3-animation.gif",
+    logo: "/assets/banner-hero/games/diablo3-logo.png",
+    bg: "/assets/banner-hero/games/diablo3-bg.jpg",
     icon: "/assets/banner-hero/icons/game-4.png",
+    mainText: "A luz clama por seu retorno fiel a Santuário.",
+    subText: "Temporada 27: Chamado da Luz",
   },
   {
+    animationCover: "/assets/banner-hero/games/sc2-animation-cover.jpg",
+    animationGif: "/assets/banner-hero/games/sc2-animation.gif",
+    logo: "/assets/banner-hero/games/sc2-logo.png",
+    bg: "/assets/banner-hero/games/sc2-bg.jpg",
     icon: "/assets/banner-hero/icons/game-5.png",
+    mainText: "O supremo jogo de estratégia em tempo real",
+    subText: "Conquiste a galáxia como terrano, zerg ou protoss",
   },
 ];

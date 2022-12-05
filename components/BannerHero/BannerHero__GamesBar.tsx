@@ -25,8 +25,16 @@ const Banner__GamesBar = ({ highlightedGame, setHighlight }: IProps) => {
         src={BannerHeroData[2].icon}
         onClick={() => setHighlight(2)}
       />
-      <img className="off" src={BannerHeroData[3].icon} />
-      <img className="off " src={BannerHeroData[4].icon} />
+      <img
+        className={highlightedGame === 3 ? "" : "disabled"}
+        src={BannerHeroData[3].icon}
+        onClick={() => setHighlight(3)}
+      />
+      <img
+        className={highlightedGame === 4 ? "" : "disabled"}
+        src={BannerHeroData[4].icon}
+        onClick={() => setHighlight(4)}
+      />
     </Container>
   );
 };
@@ -67,8 +75,7 @@ const Container = styled.div`
     width: 240px;
   }
 
-  .disabled,
-  .off {
+  .disabled {
     cursor: pointer;
     filter: grayscale(100%);
     -webkit-filter: grayscale(100%);

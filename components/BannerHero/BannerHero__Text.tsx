@@ -15,7 +15,9 @@ const Banner__Text = ({ highlightedGame }: IProps) => {
         {BannerHeroData[highlightedGame].subText}
       </Banner__SubText>
       <Banner__button selectedGame={highlightedGame}>
-        {highlightedGame === 0 ? "Jogue agora" : "Reserve agora na pré-venda"}
+        {highlightedGame === 1 || highlightedGame === 2
+          ? "Reserve agora na pré-venda"
+          : "Jogue agora"}
       </Banner__button>
     </Container>
   );
@@ -99,18 +101,19 @@ const Banner__button = styled.button<IButtonProps>`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: ${(p) => (p.selectedGame === 0 ? "8.75vw" : "21.32vw")};
+  width: ${(p) =>
+    p.selectedGame === 1 || p.selectedGame === 2 ? "21.32vw" : "8.75vw"};
   height: 52px;
   border: none;
   color: #ffffff;
-  min-width: ${(p) => (p.selectedGame === 0 ? "168px" : "250px")};
-  max-width: 331px;
+  min-width: ${(p) =>
+    p.selectedGame === 1 || p.selectedGame === 2 ? "250px" : "168px"};
+  "250px"max-width: 331px;
   background-color: #00aeff;
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
   cursor: pointer;
-  transition: all ${transitionsTime}s ease-out;
 
   &:hover {
     filter: brightness(75%);
