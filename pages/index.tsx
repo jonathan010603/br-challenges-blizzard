@@ -1,6 +1,6 @@
 import Head from "next/head";
 import styled from "styled-components";
-import Menu from "../components/Menu/Menu";
+import Menu from "../components/Menu";
 import BannerHero from "../components/BannerHero";
 import Footer from "../components/Footer";
 import JogosExclusivos from "../components/JogosExclusivos";

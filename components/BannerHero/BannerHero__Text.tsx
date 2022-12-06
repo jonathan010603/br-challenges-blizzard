@@ -39,7 +39,7 @@ const Banner__MainText = styled.span`
   max-width: 550px;
   line-height: 110.2%;
   white-space: pre-line;
-  z-index: 11;
+  z-index: 7;
 
   @media only screen and (max-width: 900px) {
     max-width: 560px;
