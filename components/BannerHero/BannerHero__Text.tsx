@@ -5,10 +5,14 @@ interface IProps {
   highlightedGame: number;
 }
 
+interface IGetGameProps {
+  selectedGame: number;
+}
+
 const Banner__Text = ({ highlightedGame }: IProps) => {
   return (
     <Container>
-      <Banner__MainText>
+      <Banner__MainText selectedGame={highlightedGame}>
         {BannerHeroData[highlightedGame].mainText}
       </Banner__MainText>
       <Banner__SubText>
@@ -33,16 +37,20 @@ const Container = styled.div`
   }
 `;
 
-const Banner__MainText = styled.span`
+const Banner__MainText = styled.span<IGetGameProps>`
   font-weight: 700;
   font-size: 64px;
-  max-width: 550px;
+  max-width: 600px;
   line-height: 110.2%;
   white-space: pre-line;
   z-index: 7;
 
   @media only screen and (max-width: 900px) {
-    max-width: 560px;
+    max-width: 550px;
+  }
+
+  @media only screen and (min-width: 750px) and (max-width: 930px) {
+    max-width: ${(p) => (p.selectedGame === 2 ? "600px" : p.selectedGame === 1 ? '510px' : p.selectedGame === 4 ? '600px' : "550px")};
   }
 
   @media only screen and (max-width: 690px) {
@@ -63,10 +71,6 @@ const Banner__MainText = styled.span`
   @media only screen and (max-width: 340px) {
     font-size: 30px;
     max-width: 250px;
-  }
-
-  @media only screen and (max-width: 1200px) and (max-height: 667px) and (orientation: landscape) {
-    font-size: 50px;
   }
 
   @media only screen and (max-width: 1200px) and (max-height: 667px) and (orientation: landscape) {
@@ -99,11 +103,7 @@ const Banner__SubText = styled.span`
   }
 `;
 
-interface IButtonProps {
-  selectedGame: number;
-}
-
-const Banner__button = styled.button<IButtonProps>`
+const Banner__button = styled.button<IGetGameProps>`
   border-radius: 4px;
   margin-top: 32px;
   display: flex;

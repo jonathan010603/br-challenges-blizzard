@@ -1,18 +1,38 @@
-import { useState } from "react";
+import { Dispatch, SetStateAction } from "react";
 import styled from "styled-components";
 import { transitionsTime } from "../../data/BannerHeroData";
-import Menu__Dropdown from "./Menu__Dropdown";
 
-const Menu__UL = () => {
-  const [isDropDownOpen, setDropdownOpen] = useState(true);
+interface IProps {
+  setDropdown: Dispatch<
+    SetStateAction<{
+      open: boolean;
+      page: number;
+    }>
+  >;
+  state: {
+    open: boolean;
+    page: number;
+  };
+}
+
+const Menu__UL = ({ state, setDropdown }: IProps) => {
+  const handleClickDropdownLinks = (page: number) => {
+    if (state.open) {
+      state.page === page
+        ? setDropdown({ open: false, page: 1 })
+        : setDropdown({ ...state, page: page });
+    } else {
+      setDropdown({ open: true, page: page });
+    }
+  };
 
   return (
     <Container>
-      <Menu__LI>
+      <Menu__LI id="gamesDropdown" onClick={() => handleClickDropdownLinks(1)}>
         Jogos
         <img src="/assets/ui/expand.png" />
       </Menu__LI>
-      <Menu__LI>
+      <Menu__LI id="sportsDropdown" onClick={() => handleClickDropdownLinks(2)}>
         Esportes
         <img src="/assets/ui/expand.png" />
       </Menu__LI>
@@ -24,6 +44,7 @@ const Menu__UL = () => {
 };
 
 const Container = styled.ul`
+  z-index: 1000;
   display: flex;
   width: 22.34vw;
   min-width: 429px;
@@ -42,6 +63,7 @@ const Container = styled.ul`
 const Menu__LI = styled.li`
   display: flex;
   cursor: pointer;
+  height: 100%;
   font-size: 14px;
   font-weight: 500;
   align-items: center;

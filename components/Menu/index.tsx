@@ -1,17 +1,23 @@
+import { useRef, useState } from "react";
 import styled from "styled-components";
 import Menu__Buttons from "./Menu__Buttons";
 import Menu__Dropdown from "./Menu__Dropdown";
 import Menu__UL from "./Menu__UL";
 
 const Menu = () => {
+  const [dropdown, setDropdown] = useState({
+    open: false,
+    page: 1,
+  });
+
   return (
     <Menu__Container>
       <Menu__BlueLine></Menu__BlueLine>
-      <Menu__Dropdown />
+      <Menu__Dropdown state={dropdown} setDropdown={setDropdown} />
       <Menu__Content>
         <Menu__Links>
           <Menu__Logo src="/assets/logo-blizzard.png" />
-          <Menu__UL />
+          <Menu__UL state={dropdown} setDropdown={setDropdown} />
         </Menu__Links>
         <Menu__Buttons />
         <img className="Banner__burger" src="/assets/ui/menu.png" />
@@ -47,6 +53,7 @@ const Menu__Container = styled.section`
 const Menu__Content = styled.div`
   z-index: 20;
   width: 100%;
+  height: 100%;
   display: flex;
   position: relative;
   align-items: center;
@@ -67,6 +74,7 @@ const Menu__Content = styled.div`
 `;
 
 const Menu__Links = styled.div`
+  height: 100%;
   display: flex;
   align-items: center;
 `;

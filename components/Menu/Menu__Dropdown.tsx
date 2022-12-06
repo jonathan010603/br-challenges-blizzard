@@ -1,9 +1,63 @@
-import styled from "styled-components";
+import {
+  Dispatch,
+  MutableRefObject,
+  RefObject,
+  SetStateAction,
+  useEffect,
+  useRef,
+} from "react";
+import styled, { StyledComponent } from "styled-components";
+import { DropdownGames } from "../../data/DropdownData";
+import { useFetch } from "../../hooks/useFetch";
 
-const Menu__Dropdown = () => {
+interface IProps {
+  setDropdown: Dispatch<
+    SetStateAction<{
+      open: boolean;
+      page: number;
+    }>
+  >;
+  state: {
+    open: boolean;
+    page: number;
+  };
+}
+
+interface IContainerProps {
+  isOpen: boolean;
+}
+
+interface IDropdownGame {
+  logo: string;
+  name: string;
+}
+
+const Menu__Dropdown = ({ state, setDropdown }: IProps) => {
+  const Menu__DropdownRef = useRef<HTMLDivElement>(null);
+
+  const handleClickOutside = (e: Event) => {
+    if (Menu__DropdownRef) {
+      !Menu__DropdownRef.current?.contains(e.target as HTMLElement) &&
+        e.target !== document.getElementById("gamesDropdown") &&
+        e.target !== document.getElementById("sportsDropdown") &&
+        setDropdown({ ...state, open: false });
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("click", handleClickOutside, true);
+  }, []);
+
   return (
-    <Container>
-      <Menu__DropdownElWrapper></Menu__DropdownElWrapper>
+    <Container isOpen={state.open} ref={Menu__DropdownRef}>
+      <Menu__DropdownElWrapper>
+        {DropdownGames.map((game: IDropdownGame) => (
+          <Menu__DropdownGame key={game.name}>
+            <img src={game.logo} />
+            <span>{game.name}</span>
+          </Menu__DropdownGame>
+        ))}
+      </Menu__DropdownElWrapper>
       <Menu__DropdownBottomBar>
         <ul>
           <li>
@@ -28,11 +82,12 @@ const Menu__Dropdown = () => {
   );
 };
 
-const Container = styled.div`
+const Container = styled.div<IContainerProps>`
   left: 0;
+  top: 0;
   z-index: 15;
-  width: 100vw;
-  display: flex;
+  width: 100%;
+  display: ${(p) => (p.isOpen ? "flex" : "none")};
   height: 86.95vh;
   position: absolute;
   flex-direction: column;
@@ -47,7 +102,35 @@ const Container = styled.div`
 
 const Menu__DropdownElWrapper = styled.div`
   width: 100%;
+  padding: 0 112px;
   height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 134.53px;
+  justify-content: space-between;
+`;
+
+const Menu__DropdownGame = styled.div`
+  display: flex;
+  width: 176px;
+  height: 176px;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 120%;
+  color: #9d9d9d;
+
+  img {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 8.6px;
+  }
+
+  span {
+    max-width: 105.12px;
+    text-align: center;
+  }
 `;
 
 const Menu__DropdownBottomBar = styled.div`

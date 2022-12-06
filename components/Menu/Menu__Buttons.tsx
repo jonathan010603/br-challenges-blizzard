@@ -1,3 +1,4 @@
+import { Dispatch, SetStateAction } from "react";
 import styled from "styled-components";
 import { transitionsTime } from "../../data/BannerHeroData";
 

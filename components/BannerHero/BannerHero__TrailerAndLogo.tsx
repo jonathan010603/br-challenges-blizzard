@@ -30,7 +30,7 @@ const Banner__TrailerAndLogo = ({ highlightedGame }: IProps) => {
 };
 
 const Container = styled.div`
-  z-index: 10;
+  z-index: 5;
   height: 64.53vh;
   display: flex;
   margin-left: auto;
