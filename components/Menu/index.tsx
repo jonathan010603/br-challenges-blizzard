@@ -80,8 +80,9 @@ const Menu__Content = styled.div<IGetMobileDropdownState>`
 
   .Menu__burger {
     width: 28px;
-    height: ${p => p.isOpen ? '28px' : '18.67'};
+    cursor: pointer;
     margin-left: 11.62vw;
+    height: ${(p) => (p.isOpen ? "28px" : "18.67")};
 
     @media only screen and (min-width: 1201px) {
       display: none;

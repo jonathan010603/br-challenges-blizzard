@@ -30,9 +30,10 @@ const Container = styled.div`
 `;
 
 const Menu__DropdownSport = styled.div`
-  display: flex;
   width: 174px;
   height: 237px;
+  display: flex;
+  cursor: pointer;
   flex-direction: column;
   align-items: center;
   font-weight: 500;
@@ -50,6 +51,12 @@ const Menu__DropdownSport = styled.div`
     min-width: 180px;
     text-align: center;
     white-space: pre-line;
+  }
+
+  &:hover {
+    img {
+      filter: brightness(130%);
+    }
   }
 `;
 

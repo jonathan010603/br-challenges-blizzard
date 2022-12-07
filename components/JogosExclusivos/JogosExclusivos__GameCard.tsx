@@ -54,6 +54,7 @@ const JogosExclusivos__GameCard = ({
 const Container = styled.div`
   display: flex;
   width: 15.67vw;
+  cursor: pointer;
   height: 67.24vh;
   flex-direction: column;
   min-width: 230px;
@@ -62,7 +63,6 @@ const Container = styled.div`
   transition: all ${transitionsTime}s ease-out;
 
   &:hover {
-    cursor: pointer;
     img {
       filter: brightness(130%);
     }

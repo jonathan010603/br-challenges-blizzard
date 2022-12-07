@@ -1,5 +1,6 @@
 import { Dispatch, SetStateAction, useEffect, useRef } from "react";
 import styled from "styled-components";
+import { transitionsTime } from "../../data/BannerHeroData";
 import Menu__DropdownWrapper1 from "./Menu__DropdownWrapper1";
 import Menu__DropdownWrapper2 from "./Menu__DropdownWrapper2";
 
@@ -93,6 +94,7 @@ const Container = styled.div<IGetDropdownState>`
     rgb(14, 17, 23) 100%
   );
   backdrop-filter: blur(6px);
+  transition: all ${transitionsTime}s ease-out;
 
   @media only screen and (max-width: 1200px) {
     display: none;
@@ -124,12 +126,17 @@ const Menu__DropdownBottomBar = styled.div<IGetDropdownState>`
 
   li {
     display: flex;
+    cursor: pointer;
     align-items: center;
     margin-right: 4.44vw;
 
     @media only screen and (min-width: 1730px) {
       text-align: center;
       ${(p) => p.page === 2 && "margin: 0"};
+    }
+
+    &:hover {
+      color: #00aeff;
     }
   }
 

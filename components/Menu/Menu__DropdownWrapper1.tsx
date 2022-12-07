@@ -31,9 +31,10 @@ const Container = styled.div`
 `;
 
 const Menu__DropdownGame = styled.div`
-  display: flex;
   width: 176px;
   height: 176px;
+  display: flex;
+  cursor: pointer;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -57,25 +58,31 @@ const Menu__DropdownGame = styled.div`
     width: 250px;
     height: 150px;
   }
-  
+
   @media only screen and (max-width: 1729px) {
     width: 220px;
     height: 150px;
   }
-  
+
   @media only screen and (max-width: 1543px) {
     width: 200px;
     height: 150px;
   }
-  
+
   @media only screen and (max-width: 1423px) {
     width: 180px;
     height: 150px;
   }
-  
+
   @media only screen and (max-width: 1303px) {
     width: 160px;
     height: 150px;
+  }
+
+  &:hover {
+    img {
+      filter: brightness(130%);
+    }
   }
 `;
 
