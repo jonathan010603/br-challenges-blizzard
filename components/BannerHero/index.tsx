@@ -114,6 +114,10 @@ const BannerHero__TextAndTrailer = styled.div`
   width: 100%;
   position: relative;
 
+  @media only screen and (max-width: 1470px) {
+    margin-left: 11.11vw;
+  }
+
   @media only screen and (max-width: 1200px) {
     flex-direction: column-reverse;
     align-items: flex-start;

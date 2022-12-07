@@ -21,11 +21,11 @@ const Menu__DropdownWrapper2 = () => {
 
 const Container = styled.div`
   width: 100%;
-  padding: 0 112px;
-  height: 100%;
+  padding: 0 157px;
+  height: 237px;
   display: flex;
   flex-wrap: wrap;
-  margin-top: 134.53px;
+  margin-top: 151px;
   justify-content: space-between;
 `;
 
@@ -47,8 +47,9 @@ const Menu__DropdownSport = styled.div`
   }
 
   span {
-    max-width: 175px;
+    min-width: 180px;
     text-align: center;
+    white-space: pre-line;
   }
 `;
 

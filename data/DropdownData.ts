@@ -14,18 +14,18 @@ export const DropdownGames = [
 ];
 
 export const DropdownSports = [
-  { name: "Hearthstone®\nmasters", logo: "/assets/sports/arenaWow-sports.png" },
+  { name: "Hearthstone®\nmasters", logo: "/assets/sports/hearthstone-sports.png" },
   {
     name: "Campeonato Mundial de\nArena WoW®",
-    logo: "/assets/sports/hearthstone-sports.png",
+    logo: "/assets/sports/arenaWow-sports.png",
   },
   { name: "StarCraft® II\nWCS", logo: "/assets/sports/sc2-sports.png" },
   {
-    name: "Copa Mundial de\nOverwatch®",
+    name: "Copa Mundial\nde Overwatch®",
     logo: "/assets/sports/overwatchMundial-sports.png",
   },
   {
-    name: "Liga de Overwatch®",
+    name: "Liga de\nOverwatch®",
     logo: "/assets/sports/overwatchLeague-sports.png",
   },
 ];

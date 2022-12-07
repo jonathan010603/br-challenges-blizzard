@@ -30,11 +30,23 @@ const Menu__UL = ({ state, setDropdown }: IProps) => {
     <Container>
       <Menu__LI id="gamesDropdown" onClick={() => handleClickDropdownLinks(1)}>
         Jogos
-        <img src="/assets/ui/expand.png" />
+        <img
+          src={
+            state.open && state.page === 1
+              ? "/assets/ui/expand_blue.png"
+              : "/assets/ui/expand.png"
+          }
+        />
       </Menu__LI>
       <Menu__LI id="sportsDropdown" onClick={() => handleClickDropdownLinks(2)}>
         Esportes
-        <img src="/assets/ui/expand.png" />
+        <img
+          src={
+            state.open && state.page === 2
+              ? "/assets/ui/expand_blue.png"
+              : "/assets/ui/expand.png"
+          }
+        />
       </Menu__LI>
       <Menu__LI>Loja</Menu__LI>
       <Menu__LI>Notícias</Menu__LI>
@@ -52,7 +64,7 @@ const Container = styled.ul`
   justify-content: space-between;
 
   @media only screen and (max-width: 1470px) {
-    margin-left: 6.3vw;
+    margin-left: 8.41vw;
   }
 
   @media only screen and (max-width: 1200px) {
