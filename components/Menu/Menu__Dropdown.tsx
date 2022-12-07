@@ -6,9 +6,9 @@ import {
   useEffect,
   useRef,
 } from "react";
-import styled, { StyledComponent } from "styled-components";
-import { DropdownGames } from "../../data/DropdownData";
-import { useFetch } from "../../hooks/useFetch";
+import styled from "styled-components";
+import Menu__DropdownWrapper1 from "./Menu__DropdownWrapper1";
+import Menu__DropdownWrapper2 from "./Menu__DropdownWrapper2";
 
 interface IProps {
   setDropdown: Dispatch<
@@ -25,11 +25,6 @@ interface IProps {
 
 interface IContainerProps {
   isOpen: boolean;
-}
-
-interface IDropdownGame {
-  logo: string;
-  name: string;
 }
 
 const Menu__Dropdown = ({ state, setDropdown }: IProps) => {
@@ -50,14 +45,11 @@ const Menu__Dropdown = ({ state, setDropdown }: IProps) => {
 
   return (
     <Container isOpen={state.open} ref={Menu__DropdownRef}>
-      <Menu__DropdownElWrapper>
-        {DropdownGames.map((game: IDropdownGame) => (
-          <Menu__DropdownGame key={game.name}>
-            <img src={game.logo} />
-            <span>{game.name}</span>
-          </Menu__DropdownGame>
-        ))}
-      </Menu__DropdownElWrapper>
+      {state.page === 1 ? (
+        <Menu__DropdownWrapper1 />
+      ) : (
+        <Menu__DropdownWrapper2 />
+      )}
       <Menu__DropdownBottomBar>
         <ul>
           <li>
@@ -98,39 +90,6 @@ const Container = styled.div<IContainerProps>`
     rgb(14, 17, 23) 100%
   );
   backdrop-filter: blur(6px);
-`;
-
-const Menu__DropdownElWrapper = styled.div`
-  width: 100%;
-  padding: 0 112px;
-  height: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 134.53px;
-  justify-content: space-between;
-`;
-
-const Menu__DropdownGame = styled.div`
-  display: flex;
-  width: 176px;
-  height: 176px;
-  flex-direction: column;
-  align-items: center;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 120%;
-  color: #9d9d9d;
-
-  img {
-    width: 70px;
-    height: 70px;
-    margin-bottom: 8.6px;
-  }
-
-  span {
-    max-width: 105.12px;
-    text-align: center;
-  }
 `;
 
 const Menu__DropdownBottomBar = styled.div`

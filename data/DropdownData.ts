@@ -12,3 +12,20 @@ export const DropdownGames = [
   { name: "StarCraft® Remastered", logo: "/assets/icons/sc-icon.png" },
   { name: "Arcade da Blizzard®", logo: "/assets/icons/arcade-icon.png" },
 ];
+
+export const DropdownSports = [
+  { name: "Hearthstone®\nmasters", logo: "/assets/sports/arenaWow-sports.png" },
+  {
+    name: "Campeonato Mundial de\nArena WoW®",
+    logo: "/assets/sports/hearthstone-sports.png",
+  },
+  { name: "StarCraft® II\nWCS", logo: "/assets/sports/sc2-sports.png" },
+  {
+    name: "Copa Mundial de\nOverwatch®",
+    logo: "/assets/sports/overwatchMundial-sports.png",
+  },
+  {
+    name: "Liga de Overwatch®",
+    logo: "/assets/sports/overwatchLeague-sports.png",
+  },
+];
