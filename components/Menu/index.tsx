@@ -2,7 +2,12 @@ import { useRef, useState } from "react";
 import styled from "styled-components";
 import Menu__Buttons from "./Menu__Buttons";
 import Menu__Dropdown from "./Menu__Dropdown";
+import Menu__MobileDropdown from "./Menu__MobileDropdown";
 import Menu__UL from "./Menu__UL";
+
+interface IGetMobileDropdownState {
+  isOpen: boolean;
+}
 
 const Menu = () => {
   const [dropdown, setDropdown] = useState({
@@ -10,17 +15,32 @@ const Menu = () => {
     page: 1,
   });
 
+  const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
+
   return (
     <Menu__Container>
       <Menu__BlueLine></Menu__BlueLine>
       <Menu__Dropdown state={dropdown} setDropdown={setDropdown} />
-      <Menu__Content>
+      <Menu__MobileDropdown
+        open={mobileDropdownOpen}
+        setMobileDropdown={setMobileDropdownOpen}
+      />
+      <Menu__Content isOpen={mobileDropdownOpen}>
         <Menu__Links>
           <Menu__Logo src="/assets/logo-blizzard.png" />
           <Menu__UL state={dropdown} setDropdown={setDropdown} />
         </Menu__Links>
         <Menu__Buttons />
-        <img className="Banner__burger" src="/assets/ui/menu.png" />
+        <img
+          className="Menu__burger"
+          id="burgerDropdown"
+          src={
+            mobileDropdownOpen
+              ? "/assets/ui/close.png"
+              : "/assets/ui/burger.png"
+          }
+          onClick={() => setMobileDropdownOpen(!mobileDropdownOpen)}
+        />
       </Menu__Content>
     </Menu__Container>
   );
@@ -50,7 +70,7 @@ const Menu__Container = styled.section`
   }
 `;
 
-const Menu__Content = styled.div`
+const Menu__Content = styled.div<IGetMobileDropdownState>`
   z-index: 20;
   width: 100%;
   height: 100%;
@@ -58,12 +78,12 @@ const Menu__Content = styled.div`
   position: relative;
   align-items: center;
 
-  .Banner__burger {
+  .Menu__burger {
     width: 28px;
-    height: 18.67px;
+    height: ${p => p.isOpen ? '28px' : '18.67'};
     margin-left: 11.62vw;
 
-    @media only screen and (min-width: 1200px) {
+    @media only screen and (min-width: 1201px) {
       display: none;
     }
 
