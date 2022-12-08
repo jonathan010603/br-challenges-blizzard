@@ -9,8 +9,11 @@ interface IProps {
 const Menu__Buttons = ({ setModalOpen }: IProps) => {
   return (
     <Container>
-      <Menu__Signup>Criar conta</Menu__Signup>
-      <Menu__Login onClick={() => setModalOpen(true)}>
+      <Menu__Signup className="Menu__SignupButton">Criar conta</Menu__Signup>
+      <Menu__Login
+        className="Menu__LoginButton"
+        onClick={() => setModalOpen(true)}
+      >
         <img src="/assets/ui/login.png" />
         Logar
       </Menu__Login>
@@ -34,9 +37,18 @@ const Container = styled.div`
     min-height: 41px;
     border-radius: 3.15385px;
     transition: all ${transitionsTime}s ease-out;
+  }
 
+  .Menu__LoginButton {
     &:hover {
-      filter: brightness(75%);
+      filter: brightness(120%);
+    }
+  }
+
+  .Menu__SignupButton {
+    &:hover {
+      background-color: white;
+      color: black;
     }
   }
 

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { transitionsTime } from "../../data/BannerHeroData";
 import { DropdownSports } from "../../data/DropdownData";
 
 interface IDropdownGame {
@@ -45,6 +46,7 @@ const Menu__DropdownSport = styled.div`
     width: 174px;
     height: 147px;
     margin-bottom: 8.6px;
+    transition: all ${transitionsTime}s ease-out;
   }
 
   span {
@@ -55,7 +57,7 @@ const Menu__DropdownSport = styled.div`
 
   &:hover {
     img {
-      filter: brightness(130%);
+      transform: scale(1.1);
     }
     color: #ffffff;
   }

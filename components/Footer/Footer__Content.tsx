@@ -131,7 +131,7 @@ const Footer__DownloadBtn = styled.button`
   transition: all ${transitionsTime}s ease-out;
 
   &:hover {
-    filter: brightness(75%);
+    filter: brightness(120%);
   }
 
   img {

@@ -50,7 +50,14 @@ const Banner__MainText = styled.span<IGetGameProps>`
   }
 
   @media only screen and (min-width: 750px) and (max-width: 930px) {
-    max-width: ${(p) => (p.selectedGame === 2 ? "600px" : p.selectedGame === 1 ? '510px' : p.selectedGame === 4 ? '600px' : "550px")};
+    max-width: ${(p) =>
+      p.selectedGame === 2
+        ? "600px"
+        : p.selectedGame === 1
+        ? "510px"
+        : p.selectedGame === 4
+        ? "600px"
+        : "550px"};
   }
 
   @media only screen and (max-width: 690px) {
@@ -122,9 +129,10 @@ const Banner__button = styled.button<IGetGameProps>`
   font-size: 16px;
   line-height: 24px;
   cursor: pointer;
+  transition: all ${transitionsTime}s ease-out;
 
   &:hover {
-    filter: brightness(75%);
+    filter: brightness(120%);
   }
 
   @media only screen and (max-width: 340px) {

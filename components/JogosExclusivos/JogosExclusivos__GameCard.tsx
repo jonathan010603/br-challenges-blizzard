@@ -59,12 +59,13 @@ const Container = styled.div`
   flex-direction: column;
   min-width: 230px;
   max-height: 500px;
+  overflow: hidden;
   min-height: 504.97px;
   transition: all ${transitionsTime}s ease-out;
 
   &:hover {
-    img {
-      filter: brightness(130%);
+    .JogosExclusivos__Cover {
+      transform: scale(1.1);
     }
   }
 
@@ -223,6 +224,8 @@ const JogosExclusivos__CoverAndLogo = styled.div`
     flex-wrap: wrap;
     justify-content: space-between;
     border-radius: 4.3px;
+    transform-origin: 50% 100%;
+    transition: all ${transitionsTime}s ease-out;
   }
 
   .JogosExclusivos__Logo {

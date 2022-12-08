@@ -156,7 +156,7 @@ const Modal__Button = styled.button`
   border-color: transparent;
 
   &:hover {
-    filter: brightness(75%);
+    filter: brightness(120%);
   }
 
   @media only screen and (max-width: 600px) {
