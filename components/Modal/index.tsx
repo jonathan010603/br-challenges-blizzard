@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 interface IProps {
   modalOpen?: boolean;
-  setModalOpen?: Dispatch<SetStateAction<boolean>>;
+  setModalOpen: Dispatch<SetStateAction<boolean>>;
 }
 
 const Modal = ({ modalOpen, setModalOpen }: IProps) => {

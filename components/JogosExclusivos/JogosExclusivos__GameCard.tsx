@@ -20,22 +20,26 @@ const JogosExclusivos__GameCard = ({
       {Name ? (
         <Container>
           <JogosExclusivos__CoverAndLogo>
-            <Image
-              unoptimized={true}
-              width="0"
-              height="0"
-              alt=""
-              className="JogosExclusivos__Cover"
-              src={ImageSource}
-            />
-            <Image
-              unoptimized={true}
-              width="0"
-              height="0"
-              alt=""
-              className="JogosExclusivos__Logo"
-              src={Logo}
-            />
+            {ImageSource && Logo && (
+              <>
+                <Image
+                  unoptimized={true}
+                  width="0"
+                  height="0"
+                  alt=""
+                  className="JogosExclusivos__Cover"
+                  src={ImageSource}
+                />
+                <Image
+                  unoptimized={true}
+                  width="0"
+                  height="0"
+                  alt=""
+                  className="JogosExclusivos__Logo"
+                  src={Logo}
+                />
+              </>
+            )}
           </JogosExclusivos__CoverAndLogo>
           <span className="JogosExclusivos__Name">{Name}</span>
           <span className="JogosExclusivos__Category">{Category}</span>
@@ -43,14 +47,16 @@ const JogosExclusivos__GameCard = ({
       ) : (
         <Container>
           <JogosExclusivos__CoverAndLogo>
-            <Image
-              unoptimized={true}
-              width="0"
-              height="0"
-              alt=""
-              className="JogosExclusivos__Cover disabled "
-              src={ImageSource}
-            />
+            {ImageSource && Logo && (
+              <Image
+                unoptimized={true}
+                width="0"
+                height="0"
+                alt=""
+                className="JogosExclusivos__Cover disabled "
+                src={ImageSource}
+              />
+            )}
             <div className="seeAllCard">
               <Image
                 unoptimized={true}
