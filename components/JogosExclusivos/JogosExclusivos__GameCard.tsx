@@ -71,7 +71,7 @@ const Container = styled.div`
 
   @media only screen and (max-width: 1470px) {
     width: 19.44vw;
-    height: 62.5vh;
+    height: 68vh;
     max-height: 523px;
     min-height: 427.97px;
     min-width: 170px;
