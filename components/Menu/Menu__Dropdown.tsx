@@ -37,7 +37,7 @@ const Menu__Dropdown = ({ state, setDropdown }: IProps) => {
 
   useEffect(() => {
     document.addEventListener("click", handleClickOutside, true);
-  }, []);
+  }, [handleClickOutside]);
 
   return (
     <Container isOpen={state.open} page={state.page} ref={Menu__DropdownRef}>

@@ -25,7 +25,7 @@ const Menu__MobileDropdown = ({ open, setMobileDropdown }: IProps) => {
 
   useEffect(() => {
     document.addEventListener("click", handleClickOutside, true);
-  }, []);
+  }, [handleClickOutside]);
 
   return (
     <Container isOpen={open} ref={Menu__MobileDropdownRef}>

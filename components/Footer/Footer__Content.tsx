@@ -6,9 +6,9 @@ import useGetOS from "../../hooks/useGetOS";
 
 const Footer__Content = () => {
   const [os, setOS] = useState<string | undefined>("");
-
+  let osName = "";
   useEffect(() => {
-    let osName = useGetOS(window.navigator.userAgent);
+    osName = useGetOS(window.navigator.userAgent);
     setOS(osName);
   }, []);
 

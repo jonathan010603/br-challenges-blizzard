@@ -7,7 +7,6 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "**api.brchallenges.com",
-        port: "",
         pathname: "/games/**",
       },
     ],
