@@ -7,6 +7,10 @@ interface IProps {
   setModalOpen: Dispatch<SetStateAction<boolean>>;
 }
 
+interface IModal__ExternalContainerProps {
+  modalOpen?: boolean;
+}
+
 const Modal = ({ modalOpen, setModalOpen }: IProps) => {
   return (
     <ExternalContainer modalOpen={modalOpen}>
@@ -70,7 +74,7 @@ const Modal = ({ modalOpen, setModalOpen }: IProps) => {
   );
 };
 
-const ExternalContainer = styled.div<IProps>`
+const ExternalContainer = styled.div<IModal__ExternalContainerProps>`
   top: 0;
   left: 0;
   width: 100%;
