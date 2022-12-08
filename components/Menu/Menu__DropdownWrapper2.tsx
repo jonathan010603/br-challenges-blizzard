@@ -57,6 +57,7 @@ const Menu__DropdownSport = styled.div`
     img {
       filter: brightness(130%);
     }
+    color: #ffffff;
   }
 `;
 

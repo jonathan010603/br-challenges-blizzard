@@ -83,6 +83,8 @@ const Menu__DropdownGame = styled.div`
     img {
       filter: brightness(130%);
     }
+    color: #ffffff;
+    background-color: black;
   }
 `;
 

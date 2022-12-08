@@ -90,8 +90,8 @@ const Container = styled.div<IGetDropdownState>`
   background: linear-gradient(
     180deg,
     #020203 0%,
-    rgb(14, 17, 23) 96.35%,
-    rgb(14, 17, 23) 100%
+    rgba(14, 17, 23, 0.92) 96.35%,
+    rgba(14, 17, 23, 0.9) 100%
   );
   backdrop-filter: blur(6px);
   transition: all ${transitionsTime}s ease-out;
@@ -117,7 +117,7 @@ const Menu__DropdownBottomBar = styled.div<IGetDropdownState>`
     font-weight: 600;
     line-height: 24px;
     align-self: center;
-    margin: ${(p) => (p.page === 1 ? "0 0 0 316px" : "0 0 0 609px")};
+    margin: 0 auto;
 
     @media only screen and (min-width: 1730px) {
       margin: 0 auto;
