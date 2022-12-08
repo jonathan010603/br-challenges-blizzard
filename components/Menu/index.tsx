@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useRef, useState } from "react";
 import styled from "styled-components";
 import Modal from "../Modal";
@@ -34,7 +35,9 @@ const Menu = () => {
           <Menu__UL state={dropdown} setDropdown={setDropdown} />
         </Menu__Links>
         <Menu__Buttons setModalOpen={setModalOpen} />
-        <img
+        <Image
+          width={28} height={18.67}
+          alt=""
           className="Menu__burger"
           id="burgerDropdown"
           src={

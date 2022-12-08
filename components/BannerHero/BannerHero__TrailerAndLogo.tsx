@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styled from "styled-components";
 import { BannerHeroData } from "../../data/BannerHeroData";
 
@@ -8,13 +9,20 @@ interface IProps {
 const Banner__TrailerAndLogo = ({ highlightedGame }: IProps) => {
   return (
     <Container>
-      <img
+      <Image
+        width="0"
+        height="0"
+        alt=""
         className="Banner__Logo"
         src={BannerHeroData[highlightedGame].logo}
       />
       <Trailer>
         <span>ASSISTA AO TRAILER</span>
-        <img
+        <Image
+          width={24}
+          height={24}
+          alt=""
+          unoptimized={true}
           className="BannerHero__Cover"
           src={BannerHeroData[highlightedGame].animationCover}
           onMouseOver={(e: any) =>
@@ -26,7 +34,13 @@ const Banner__TrailerAndLogo = ({ highlightedGame }: IProps) => {
           }
         />
         <BannerHero__PlayVideo>
-          <img className="BannerHero__PlayIcon" src="/assets/ui/play.png" />
+          <Image
+            width={280}
+            height={280}
+            alt=""
+            className="BannerHero__PlayIcon"
+            src="/assets/ui/play.png"
+          />
         </BannerHero__PlayVideo>
       </Trailer>
     </Container>
@@ -77,6 +91,7 @@ const Trailer = styled.div`
 
   .BannerHero__Cover {
     max-width: 280px;
+    min-width: 280px;
     min-height: 173px;
     margin-top: 16px;
     cursor: pointer;

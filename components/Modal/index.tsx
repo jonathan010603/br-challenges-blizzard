@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Dispatch, SetStateAction } from "react";
 import styled from "styled-components";
 
@@ -10,22 +11,51 @@ const Modal = ({ modalOpen, setModalOpen }: IProps) => {
   return (
     <ExternalContainer modalOpen={modalOpen}>
       <Container>
-        <img
+        <Image
+          unoptimized={true}
+          width={32}
+          height={32}
+          alt=""
           className="Modal__close"
           src="/assets/ui/close_modal.png"
           onClick={() => setModalOpen(false)}
         />
         <Modal__Content>
-          <img className="Modal__logo" src="/assets/logo-battle-net.png" />
+          <Image
+            unoptimized={true}
+            width="0"
+            height="0"
+            alt=""
+            className="Modal__logo"
+            src="/assets/logo-battle-net.png"
+          />
           <Modal__Input placeholder="E-mail ou telefone" />
           <Modal__Input placeholder="Senha" type="password" />
           <Modal__Button>Conectar-se</Modal__Button>
           <Modal__AlternateLogin>
             <span>ou conecte-se com</span>
             <div>
-              <img src="/assets/ui/google.png" />
-              <img src="/assets/ui/apple.png" />
-              <img src="/assets/ui/facebook.png" />
+              <Image
+                unoptimized={true}
+                width="0"
+                height="0"
+                alt=""
+                src="/assets/ui/google.png"
+              />
+              <Image
+                unoptimized={true}
+                width="0"
+                height="0"
+                alt=""
+                src="/assets/ui/apple.png"
+              />
+              <Image
+                unoptimized={true}
+                width="0"
+                height="0"
+                alt=""
+                src="/assets/ui/facebook.png"
+              />
             </div>
           </Modal__AlternateLogin>
           <Modal__Links>

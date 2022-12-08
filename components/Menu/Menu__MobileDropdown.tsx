@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Dispatch, SetStateAction, useEffect, useRef } from "react";
 import styled from "styled-components";
 
@@ -36,23 +37,44 @@ const Menu__MobileDropdown = ({ open, setMobileDropdown }: IProps) => {
       </Menu__MobileStdUl>
       <Menu__MobileGamesUl>
         <li>
-          <img src="/assets/ui/every.png" className="seeAllGames" />
+          <Image
+            width={15}
+            height={15}
+            alt=""
+            src="/assets/ui/every.png"
+            className="seeAllGames"
+          />
           Ver todos os jogos
         </li>
         <li>
-          <img src="/assets/ui/battlenet-blue.png" />
+          <Image
+            width={20}
+            height={20}
+            alt=""
+            src="/assets/ui/battlenet-blue.png"
+          />
           Aplicativo Battle.net
         </li>
         <li>
-          <img src="/assets/ui/downloads-blue.png" />
+          <Image
+            width={20}
+            height={20}
+            alt=""
+            src="/assets/ui/downloads-blue.png"
+          />
           Downloads
         </li>
         <li>
-          <img src="/assets/ui/chat-blue.png" />
+          <Image width={20} height={20} alt="" src="/assets/ui/chat-blue.png" />
           Fórum dos jogos
         </li>
         <li>
-          <img src="/assets/ui/championship.png" />
+          <Image
+            width={20}
+            height={20}
+            alt=""
+            src="/assets/ui/championship.png"
+          />
           Torneios da comunidade
         </li>
       </Menu__MobileGamesUl>
@@ -184,7 +206,14 @@ const Menu__MobileGamesUl = styled.ul`
     margin-right: 4vw;
   }
 
+  .seeAllGames {
+    width: 15px;
+    margin-left: 4px;
+  }
+
   li {
+    display: flex;
+    align-items: center;
     margin-bottom: 20px;
 
     @media only screen and (max-height: 690px) {
@@ -198,11 +227,6 @@ const Menu__MobileGamesUl = styled.ul`
     &:hover {
       color: #00aeff;
     }
-  }
-
-  .seeAllGames {
-    width: 15px;
-    margin-left: 7px;
   }
 `;
 

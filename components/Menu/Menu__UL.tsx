@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Dispatch, SetStateAction } from "react";
 import styled from "styled-components";
 import { transitionsTime } from "../../data/BannerHeroData";
@@ -30,7 +31,10 @@ const Menu__UL = ({ state, setDropdown }: IProps) => {
     <Container>
       <Menu__LI id="gamesDropdown" onClick={() => handleClickDropdownLinks(1)}>
         Jogos
-        <img
+        <Image
+          width="0"
+          height="0"
+          alt=""
           src={
             state.open && state.page === 1
               ? "/assets/ui/expand_blue.png"
@@ -40,7 +44,10 @@ const Menu__UL = ({ state, setDropdown }: IProps) => {
       </Menu__LI>
       <Menu__LI id="sportsDropdown" onClick={() => handleClickDropdownLinks(2)}>
         Esportes
-        <img
+        <Image
+          width="0"
+          height="0"
+          alt=""
           src={
             state.open && state.page === 2
               ? "/assets/ui/expand_blue.png"

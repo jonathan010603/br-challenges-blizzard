@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styled from "styled-components";
 import { transitionsTime } from "../../data/BannerHeroData";
 import { DropdownSports } from "../../data/DropdownData";
@@ -12,7 +13,7 @@ const Menu__DropdownWrapper2 = () => {
     <Container>
       {DropdownSports.map((game: IDropdownGame) => (
         <Menu__DropdownSport key={game.name}>
-          <img src={game.logo} />
+          <Image unoptimized={true} width="0" height="0" alt="" src={game.logo} />
           <span>{game.name}</span>
         </Menu__DropdownSport>
       ))}

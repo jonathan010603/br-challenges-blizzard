@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Dispatch, SetStateAction } from "react";
 import styled from "styled-components";
 import { BannerHeroData, transitionsTime } from "../../data/BannerHeroData";
@@ -10,27 +11,47 @@ interface IProps {
 const Banner__GamesBar = ({ highlightedGame, setHighlight }: IProps) => {
   return (
     <Container>
-      <img
+      <Image
+        unoptimized={true}
+        width="0"
+        height="0"
+        alt=""
         className={highlightedGame === 0 ? "" : "disabled"}
         src={BannerHeroData[0].icon}
         onClick={() => setHighlight(0)}
       />
-      <img
+      <Image
+        unoptimized={true}
+        width="0"
+        height="0"
+        alt=""
         className={highlightedGame === 1 ? "" : "disabled"}
         src={BannerHeroData[1].icon}
         onClick={() => setHighlight(1)}
       />
-      <img
+      <Image
+        unoptimized={true}
+        width="0"
+        height="0"
+        alt=""
         className={highlightedGame === 2 ? "" : "disabled"}
         src={BannerHeroData[2].icon}
         onClick={() => setHighlight(2)}
       />
-      <img
+      <Image
+        unoptimized={true}
+        width="0"
+        height="0"
+        alt=""
         className={highlightedGame === 3 ? "" : "disabled"}
         src={BannerHeroData[3].icon}
         onClick={() => setHighlight(3)}
       />
-      <img
+      <Image
+        unoptimized={true}
+        width="0"
+        height="0"
+        alt=""
         className={highlightedGame === 4 ? "" : "disabled"}
         src={BannerHeroData[4].icon}
         onClick={() => setHighlight(4)}

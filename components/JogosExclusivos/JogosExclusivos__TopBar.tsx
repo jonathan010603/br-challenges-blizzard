@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styled from "styled-components";
 
 const JogosExclusivos__TopBar = () => {
@@ -10,13 +11,13 @@ const JogosExclusivos__TopBar = () => {
         exclusivos
       </JogosExclusivos__Title>
       <JogosExclusivos__Platforms>
-        <img src="/assets/ui/battlenet.png" />
-        <img src="/assets/ui/nintendo.png" />
-        <img src="/assets/ui/xbox.png" />
-        <img src="/assets/ui/playstation.png" />
+        <Image width={21.98} height={22} alt="" src="/assets/ui/battlenet.png" />
+        <Image width={20} height={22} alt="" src="/assets/ui/nintendo.png" />
+        <Image width={20} height={22} alt="" src="/assets/ui/xbox.png" />
+        <Image width={25.91} height={20} alt="" src="/assets/ui/playstation.png" />
       </JogosExclusivos__Platforms>
       <span className="JogosExclusivos__SeeAll">
-        <img src="/assets/ui/every.png" />
+        <Image width={9} height={9} alt="" src="/assets/ui/every.png" />
         Ver todos os jogos
       </span>
     </Container>

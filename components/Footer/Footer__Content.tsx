@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { transitionsTime } from "../../data/BannerHeroData";
@@ -17,24 +18,24 @@ const Footer__Content = () => {
       <Footer__MainText>Baixe agora o battle.net</Footer__MainText>
       <Footer__SubTexts>
         <li>
-          <img src="/assets/ui/onePlace.png" />
+          <Image width="0" height="0" alt="" src="/assets/ui/onePlace.png" />
           Seus jogos em um só lugar
         </li>
         <li>
-          <img src="/assets/ui/friends.png" />
+          <Image width="0" height="0" alt="" src="/assets/ui/friends.png" />
           Conecte-se aos seus amigos
         </li>
         <li>
-          <img src="/assets/ui/buy.png" />
+          <Image width="0" height="0" alt="" src="/assets/ui/buy.png" />
           Compre jogos e itens digitais
         </li>
       </Footer__SubTexts>
       <Footer__DownloadBtn>
-        <img src={`/assets/ui/${os}.png`} />
+        <Image width={24} height={24} alt="" src={`/assets/ui/${os}.png`} />
         Baixar para o {os}
       </Footer__DownloadBtn>
       <Footer__MobileAdvice>
-        <img src="/assets/ui/cellphone.png" />
+        <Image width={24} height={24} alt="" src="/assets/ui/cellphone.png" />
         Também disponível como
         <br />
         aplicativo móvel

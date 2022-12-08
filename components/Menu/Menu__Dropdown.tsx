@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Dispatch, SetStateAction, useEffect, useRef } from "react";
 import styled from "styled-components";
 import { transitionsTime } from "../../data/BannerHeroData";
@@ -49,26 +50,46 @@ const Menu__Dropdown = ({ state, setDropdown }: IProps) => {
         {state.page === 1 ? (
           <ul>
             <li>
-              <img src="/assets/ui/every.png" />
+              <Image width={9} height={9} alt="" src="/assets/ui/every.png" />
               Ver todos os jogos
             </li>
             <li>
-              <img src="/assets/ui/battlenet-blue.png" />
+              <Image
+                width={24}
+                height={24}
+                alt=""
+                src="/assets/ui/battlenet-blue.png"
+              />
               Aplicativo Battle.net
             </li>
             <li>
-              <img src="/assets/ui/downloads-blue.png" />
+              <Image
+                width={24}
+                height={24}
+                alt=""
+                src="/assets/ui/downloads-blue.png"
+              />
               Downloads
             </li>
             <li>
-              <img src="/assets/ui/chat-blue.png" />
+              <Image
+                width={24}
+                height={24}
+                alt=""
+                src="/assets/ui/chat-blue.png"
+              />
               Fórum dos jogos
             </li>
           </ul>
         ) : (
           <ul>
             <li>
-              <img src="/assets/ui/championship.png" />
+              <Image
+                width={24}
+                height={24}
+                alt=""
+                src="/assets/ui/championship.png"
+              />
               Torneios da comunidade
             </li>
           </ul>

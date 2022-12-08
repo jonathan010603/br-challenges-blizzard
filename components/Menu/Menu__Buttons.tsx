@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Dispatch, SetStateAction } from "react";
 import styled from "styled-components";
 import { transitionsTime } from "../../data/BannerHeroData";
@@ -14,7 +15,7 @@ const Menu__Buttons = ({ setModalOpen }: IProps) => {
         className="Menu__LoginButton"
         onClick={() => setModalOpen(true)}
       >
-        <img src="/assets/ui/login.png" />
+        <Image width="0" height="0" alt="" src="/assets/ui/login.png" />
         Logar
       </Menu__Login>
     </Container>

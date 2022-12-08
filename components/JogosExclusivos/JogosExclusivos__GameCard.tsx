@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styled from "styled-components";
 import { transitionsTime } from "../../data/BannerHeroData";
 
@@ -19,8 +20,22 @@ const JogosExclusivos__GameCard = ({
       {Name ? (
         <Container>
           <JogosExclusivos__CoverAndLogo>
-            <img className="JogosExclusivos__Cover" src={ImageSource} />
-            <img className="JogosExclusivos__Logo" src={Logo} />
+            <Image
+              unoptimized={true}
+              width="0"
+              height="0"
+              alt=""
+              className="JogosExclusivos__Cover"
+              src={ImageSource}
+            />
+            <Image
+              unoptimized={true}
+              width="0"
+              height="0"
+              alt=""
+              className="JogosExclusivos__Logo"
+              src={Logo}
+            />
           </JogosExclusivos__CoverAndLogo>
           <span className="JogosExclusivos__Name">{Name}</span>
           <span className="JogosExclusivos__Category">{Category}</span>
@@ -28,17 +43,31 @@ const JogosExclusivos__GameCard = ({
       ) : (
         <Container>
           <JogosExclusivos__CoverAndLogo>
-            <img
+            <Image
+              unoptimized={true}
+              width="0"
+              height="0"
+              alt=""
               className="JogosExclusivos__Cover disabled "
               src={ImageSource}
             />
             <div className="seeAllCard">
-              <img
+              <Image
+                unoptimized={true}
+                width="0"
+                height="0"
+                alt=""
                 className="JogosExclusivos__BlizzardLogo"
                 src="/assets/logo-blizzard.png"
               />
               <div>
-                <img src="/assets/ui/every_white.png" />
+                <Image
+                  unoptimized={true}
+                  width={9}
+                  height={9}
+                  alt=""
+                  src="/assets/ui/every_white.png"
+                />
                 Ver todos os jogos
               </div>
             </div>
