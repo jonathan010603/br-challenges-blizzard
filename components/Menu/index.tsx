@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import styled from "styled-components";
+import Modal from "../Modal";
 import Menu__Buttons from "./Menu__Buttons";
 import Menu__Dropdown from "./Menu__Dropdown";
 import Menu__MobileDropdown from "./Menu__MobileDropdown";
@@ -16,9 +17,11 @@ const Menu = () => {
   });
 
   const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
 
   return (
     <Menu__Container>
+      <Modal modalOpen={modalOpen} setModalOpen={setModalOpen} />
       <Menu__BlueLine></Menu__BlueLine>
       <Menu__Dropdown state={dropdown} setDropdown={setDropdown} />
       <Menu__MobileDropdown
@@ -30,7 +33,7 @@ const Menu = () => {
           <Menu__Logo src="/assets/logo-blizzard.png" />
           <Menu__UL state={dropdown} setDropdown={setDropdown} />
         </Menu__Links>
-        <Menu__Buttons />
+        <Menu__Buttons setModalOpen={setModalOpen} />
         <img
           className="Menu__burger"
           id="burgerDropdown"

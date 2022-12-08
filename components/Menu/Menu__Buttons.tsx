@@ -2,11 +2,15 @@ import { Dispatch, SetStateAction } from "react";
 import styled from "styled-components";
 import { transitionsTime } from "../../data/BannerHeroData";
 
-const Menu__Buttons = () => {
+interface IProps {
+  setModalOpen: Dispatch<SetStateAction<boolean>>;
+}
+
+const Menu__Buttons = ({ setModalOpen }: IProps) => {
   return (
     <Container>
       <Menu__Signup>Criar conta</Menu__Signup>
-      <Menu__Login>
+      <Menu__Login onClick={() => setModalOpen(true)}>
         <img src="/assets/ui/login.png" />
         Logar
       </Menu__Login>

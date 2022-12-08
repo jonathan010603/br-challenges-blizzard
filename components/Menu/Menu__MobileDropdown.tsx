@@ -32,6 +32,7 @@ const Menu__MobileDropdown = ({ open, setMobileDropdown }: IProps) => {
         <li>Loja</li>
         <li>Notícias</li>
         <li>Suporte</li>
+        <li className="Menu__SignupLI">Entrar</li>
       </Menu__MobileStdUl>
       <Menu__MobileGamesUl>
         <li>
@@ -84,7 +85,7 @@ const Container = styled.div<IGetDropdownState>`
 
   @media only screen and (max-width: 420px) and (min-height: 600px) {
     flex-direction: column;
-    height: 90vh !important;
+    height: 100vh !important;
   }
 
   @media only screen and (min-width: 376px) {
@@ -135,6 +136,12 @@ const Menu__MobileStdUl = styled.ul`
 
     &:hover {
       color: #00aeff;
+    }
+  }
+
+  .Menu__SignupLI {
+    @media only screen and (min-width: 561px) {
+      display: none;
     }
   }
 `;
