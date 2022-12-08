@@ -1,4 +1,4 @@
-const useGetOS = (userAgent: string) => {
+const setOS = (userAgent: string) => {
   let OS = "Unknown";
   if (userAgent.indexOf("Mac") != -1) OS = "MacOS";
   if (userAgent.indexOf("Win") != -1) OS = "Windows";
@@ -7,4 +7,4 @@ const useGetOS = (userAgent: string) => {
   return OS;
 };
 
-export default useGetOS;
+export default setOS;

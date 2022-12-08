@@ -2,14 +2,13 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { transitionsTime } from "../../data/BannerHeroData";
-import useGetOS from "../../hooks/useGetOS";
+import setOS from "../../hooks/setOS";
 
 const Footer__Content = () => {
-  const [os, setOS] = useState<string | undefined>("");
-  let osName = "";
+  const [os, setUserOS] = useState<string | undefined>("");
   useEffect(() => {
-    osName = useGetOS(window.navigator.userAgent);
-    setOS(osName);
+    let osName = setOS(window.navigator.userAgent);
+    setUserOS(osName);
   }, []);
 
   return (
