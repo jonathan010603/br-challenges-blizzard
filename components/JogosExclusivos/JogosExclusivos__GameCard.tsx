@@ -23,6 +23,7 @@ const JogosExclusivos__GameCard = ({
             {ImageSource && Logo && (
               <>
                 <Image
+                  loading="lazy"
                   unoptimized={true}
                   width="0"
                   height="0"
@@ -31,6 +32,7 @@ const JogosExclusivos__GameCard = ({
                   src={ImageSource}
                 />
                 <Image
+                  loading="lazy"
                   unoptimized={true}
                   width="0"
                   height="0"
@@ -49,6 +51,7 @@ const JogosExclusivos__GameCard = ({
           <JogosExclusivos__CoverAndLogo>
             {ImageSource && Logo && (
               <Image
+                loading="lazy"
                 unoptimized={true}
                 width="0"
                 height="0"
@@ -59,6 +62,7 @@ const JogosExclusivos__GameCard = ({
             )}
             <div className="seeAllCard">
               <Image
+                loading="lazy"
                 unoptimized={true}
                 width="0"
                 height="0"
@@ -68,6 +72,7 @@ const JogosExclusivos__GameCard = ({
               />
               <div>
                 <Image
+                  loading="lazy"
                   unoptimized={true}
                   width={9}
                   height={9}

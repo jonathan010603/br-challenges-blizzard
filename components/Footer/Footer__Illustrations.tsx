@@ -3,8 +3,14 @@ import styled from "styled-components";
 const Footer__Illustrations = () => {
   return (
     <Container>
-      <Footer__AppIllustration src="/assets/illustrations/app.png" />
-      <Footer__AppMiniIllustration src="/assets/illustrations/app-mini.png" />
+      <Footer__AppIllustration
+        loading="lazy"
+        src="/assets/illustrations/app.png"
+      />
+      <Footer__AppMiniIllustration
+        loading="lazy"
+        src="/assets/illustrations/app-mini.png"
+      />
     </Container>
   );
 };
