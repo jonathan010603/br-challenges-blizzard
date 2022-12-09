@@ -1,30 +1,33 @@
+import { useContext } from "react";
 import styled from "styled-components";
+import { BannerContext } from "../../contexts/BannerContext";
 import { BannerHeroData, transitionsTime } from "../../data/BannerHeroData";
 
-interface IProps {
-  highlightedGame: number;
-}
-
-interface IGetGameProps {
+interface IGetSelectedGame {
   selectedGame: number;
 }
 
-const Banner__Text = ({ highlightedGame }: IProps) => {
-  return (
-    <Container>
-      <Banner__MainText selectedGame={highlightedGame}>
-        {BannerHeroData[highlightedGame].mainText}
-      </Banner__MainText>
-      <Banner__SubText>
-        {BannerHeroData[highlightedGame].subText}
-      </Banner__SubText>
-      <Banner__button selectedGame={highlightedGame}>
-        {highlightedGame === 1 || highlightedGame === 2
-          ? "Reserve agora na pré-venda"
-          : "Jogue agora"}
-      </Banner__button>
-    </Container>
-  );
+const Banner__Text = () => {
+  const ctx = useContext(BannerContext);
+  if (ctx) {
+    return (
+      <Container>
+        <Banner__MainText selectedGame={ctx.selectedGame}>
+          {BannerHeroData[ctx.selectedGame].mainText}
+        </Banner__MainText>
+        <Banner__SubText>
+          {BannerHeroData[ctx.selectedGame].subText}
+        </Banner__SubText>
+        <Banner__button selectedGame={ctx.selectedGame}>
+          {ctx.selectedGame === 1 || ctx.selectedGame === 2
+            ? "Reserve agora na pré-venda"
+            : "Jogue agora"}
+        </Banner__button>
+      </Container>
+    );
+  } else {
+    return <></>;
+  }
 };
 
 const Container = styled.div`
@@ -37,7 +40,7 @@ const Container = styled.div`
   }
 `;
 
-const Banner__MainText = styled.span<IGetGameProps>`
+const Banner__MainText = styled.span<IGetSelectedGame>`
   font-weight: 700;
   font-size: 64px;
   max-width: 600px;
@@ -110,7 +113,7 @@ const Banner__SubText = styled.span`
   }
 `;
 
-const Banner__button = styled.button<IGetGameProps>`
+const Banner__button = styled.button<IGetSelectedGame>`
   border-radius: 4px;
   margin-top: 32px;
   display: flex;

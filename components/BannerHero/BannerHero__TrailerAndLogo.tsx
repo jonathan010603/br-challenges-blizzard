@@ -1,50 +1,58 @@
 import Image from "next/image";
+import { useContext } from "react";
 import styled from "styled-components";
+import { BannerContext } from "../../contexts/BannerContext";
 import { BannerHeroData } from "../../data/BannerHeroData";
 
-interface IProps {
-  highlightedGame: number;
+interface IGetSelectedGame {
+  selectedGame: number;
 }
 
-const Banner__TrailerAndLogo = ({ highlightedGame }: IProps) => {
-  return (
-    <Container>
-      <Image
-        width="0"
-        height="0"
-        alt=""
-        className="Banner__Logo"
-        src={BannerHeroData[highlightedGame].logo}
-      />
-      <Trailer>
-        <span>ASSISTA AO TRAILER</span>
+const Banner__TrailerAndLogo = () => {
+  const ctx = useContext(BannerContext);
+  if (ctx) {
+    return (
+      <Container>
         <Image
-          width={24}
-          height={24}
+          width="0"
+          height="0"
           alt=""
-          unoptimized={true}
-          className="BannerHero__Cover"
-          src={BannerHeroData[highlightedGame].animationCover}
-          onMouseOver={(e: any) =>
-            (e.currentTarget.src = BannerHeroData[highlightedGame].animationGif)
-          }
-          onMouseOut={(e: any) =>
-            (e.currentTarget.src =
-              BannerHeroData[highlightedGame].animationCover)
-          }
+          className="Banner__Logo"
+          src={BannerHeroData[ctx.selectedGame].logo}
         />
-        <BannerHero__PlayVideo>
+        <Trailer>
+          <span>ASSISTA AO TRAILER</span>
           <Image
-            width={280}
-            height={280}
+            width={24}
+            height={24}
             alt=""
-            className="BannerHero__PlayIcon"
-            src="/assets/ui/play.png"
+            unoptimized={true}
+            className="BannerHero__Cover"
+            src={BannerHeroData[ctx.selectedGame].animationCover}
+            onMouseOver={(e: any) =>
+              (e.currentTarget.src =
+                BannerHeroData[ctx.selectedGame].animationGif)
+            }
+            onMouseOut={(e: any) =>
+              (e.currentTarget.src =
+                BannerHeroData[ctx.selectedGame].animationCover)
+            }
           />
-        </BannerHero__PlayVideo>
-      </Trailer>
-    </Container>
-  );
+          <BannerHero__PlayVideo>
+            <Image
+              width={280}
+              height={280}
+              alt=""
+              className="BannerHero__PlayIcon"
+              src="/assets/ui/play.png"
+            />
+          </BannerHero__PlayVideo>
+        </Trailer>
+      </Container>
+    );
+  } else {
+    return <></>;
+  }
 };
 
 const Container = styled.div`

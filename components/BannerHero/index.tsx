@@ -1,5 +1,9 @@
-import { ReactNode, useState } from "react";
+import { ReactNode, useContext, useEffect, useState } from "react";
 import styled from "styled-components";
+import {
+  BannerContext,
+  BannerContextWrapper,
+} from "../../contexts/BannerContext";
 import {
   BannerBgPositions,
   BannerHeroData,
@@ -10,31 +14,25 @@ import BannerHero__GamesBar from "./BannerHero__GamesBar";
 import BannerHero__Text from "./BannerHero__Text";
 import BannerHero__TrailerAndLogo from "./BannerHero__TrailerAndLogo";
 
-interface IBannerHeroBG__Props {
-  selectedIcon: number;
-}
-
-interface IBanner__BlueLineProps {
-  selectedIcon: number;
+interface IGetSelectedGame {
+  selectedGame: number;
 }
 
 const BannerHero = () => {
-  const [selectedGame, setSelectedGame] = useState(0);
+  const ctx = useContext(BannerContext);
+
   return (
     <BannerHero__Container>
-      <BannerHero__BG selectedIcon={selectedGame} />
+      {ctx && <BannerHero__BG selectedGame={ctx.selectedGame} />}
       <BannerHero__Gradient />
       <BannerHero__Content>
-        <BannerHero__GamesBar
-          highlightedGame={selectedGame}
-          setHighlight={setSelectedGame}
-        />
+        <BannerHero__GamesBar />
         <BannerHero__TextAndTrailer>
-          <BannerHero__Text highlightedGame={selectedGame} />
-          <BannerHero__TrailerAndLogo highlightedGame={selectedGame} />
+          <BannerHero__Text />
+          <BannerHero__TrailerAndLogo />
         </BannerHero__TextAndTrailer>
       </BannerHero__Content>
-      <Banner__BlueLine selectedIcon={selectedGame} />
+      {ctx && <Banner__BlueLine selectedGame={ctx?.selectedGame} />}
     </BannerHero__Container>
   );
 };
@@ -49,18 +47,18 @@ const BannerHero__Container = styled.section`
   padding-bottom: 9.64vh;
 `;
 
-const BannerHero__BG = styled.section<IBannerHeroBG__Props>`
+const BannerHero__BG = styled.section<IGetSelectedGame>`
   z-index: 1;
   width: 100%;
   height: 100%;
   min-height: 500px;
   position: absolute;
   background-size: cover;
-  background-image: url(${(p) => BannerHeroData[p.selectedIcon].bg});
+  background-image: url(${(p) => BannerHeroData[p.selectedGame].bg});
   transition: all ${transitionsTime}s ease-out;
 
   @media only screen and (max-width: 1200px) {
-    background-position-x: ${(p) => BannerBgPositions[p.selectedIcon].bgPosX};
+    background-position-x: ${(p) => BannerBgPositions[p.selectedGame].bgPosX};
   }
 `;
 
@@ -98,7 +96,7 @@ const BannerHero__Content = styled.div`
     align-items: flex-start;
     margin-top: 23vh;
   }
-  
+
   @media only screen and (max-width: 680px) {
     padding: 0 4.03vw 0 5.85vw;
   }
@@ -133,25 +131,25 @@ const BannerHero__TextAndTrailer = styled.div`
   }
 `;
 
-const Banner__BlueLine = styled.div<IBanner__BlueLineProps>`
+const Banner__BlueLine = styled.div<IGetSelectedGame>`
   bottom: 0;
   height: 3px;
   z-index: 10;
   position: absolute;
   background: #00aeff;
   transition: all ${transitionsTime}s ease-out;
-  width: ${(p) => BlueLineValues[p.selectedIcon].w1920};
+  width: ${(p) => BlueLineValues[p.selectedGame].w1920};
 
   @media only screen and (max-width: 1200px) {
-    width: ${(p) => BlueLineValues[p.selectedIcon].w768};
+    width: ${(p) => BlueLineValues[p.selectedGame].w768};
   }
 
   @media only screen and (max-width: 680px) {
-    width: ${(p) => BlueLineValues[p.selectedIcon].w375};
+    width: ${(p) => BlueLineValues[p.selectedGame].w375};
   }
 
   @media only screen and (max-width: 350px) {
-    width: ${(p) => BlueLineValues[p.selectedIcon].wFold};
+    width: ${(p) => BlueLineValues[p.selectedGame].wFold};
   }
 `;
 

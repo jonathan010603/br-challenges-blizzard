@@ -4,6 +4,7 @@ import Menu from "../components/Menu";
 import BannerHero from "../components/BannerHero";
 import Footer from "../components/Footer";
 import JogosExclusivos from "../components/JogosExclusivos";
+import { BannerContextWrapper } from "../contexts/BannerContext";
 
 const Container = styled.main`
   width: 100%;
@@ -20,7 +21,9 @@ const Home = () => {
       </Head>
       <Container>
         <Menu />
-        <BannerHero />
+        <BannerContextWrapper>
+          <BannerHero />
+        </BannerContextWrapper>
         <JogosExclusivos />
         <Footer />
       </Container>

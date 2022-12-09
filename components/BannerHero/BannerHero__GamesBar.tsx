@@ -1,14 +1,12 @@
 import Image from "next/image";
-import { Dispatch, SetStateAction } from "react";
+import { useContext } from "react";
 import styled from "styled-components";
+import { BannerContext } from "../../contexts/BannerContext";
 import { BannerHeroData, transitionsTime } from "../../data/BannerHeroData";
 
-interface IProps {
-  setHighlight: Dispatch<SetStateAction<number>>;
-  highlightedGame: number;
-}
+const Banner__GamesBar = () => {
+  const ctx = useContext(BannerContext);
 
-const Banner__GamesBar = ({ highlightedGame, setHighlight }: IProps) => {
   return (
     <Container>
       <Image
@@ -16,45 +14,45 @@ const Banner__GamesBar = ({ highlightedGame, setHighlight }: IProps) => {
         width="0"
         height="0"
         alt=""
-        className={highlightedGame === 0 ? "" : "disabled"}
+        className={ctx?.selectedGame === 0 ? "" : "disabled"}
         src={BannerHeroData[0].icon}
-        onClick={() => setHighlight(0)}
+        onClick={() => ctx?.setSelectedGame(0)}
       />
       <Image
         unoptimized={true}
         width="0"
         height="0"
         alt=""
-        className={highlightedGame === 1 ? "" : "disabled"}
+        className={ctx?.selectedGame === 1 ? "" : "disabled"}
         src={BannerHeroData[1].icon}
-        onClick={() => setHighlight(1)}
+        onClick={() => ctx?.setSelectedGame(1)}
       />
       <Image
         unoptimized={true}
         width="0"
         height="0"
         alt=""
-        className={highlightedGame === 2 ? "" : "disabled"}
+        className={ctx?.selectedGame === 2 ? "" : "disabled"}
         src={BannerHeroData[2].icon}
-        onClick={() => setHighlight(2)}
+        onClick={() => ctx?.setSelectedGame(2)}
       />
       <Image
         unoptimized={true}
         width="0"
         height="0"
         alt=""
-        className={highlightedGame === 3 ? "" : "disabled"}
+        className={ctx?.selectedGame === 3 ? "" : "disabled"}
         src={BannerHeroData[3].icon}
-        onClick={() => setHighlight(3)}
+        onClick={() => ctx?.setSelectedGame(3)}
       />
       <Image
         unoptimized={true}
         width="0"
         height="0"
         alt=""
-        className={highlightedGame === 4 ? "" : "disabled"}
+        className={ctx?.selectedGame === 4 ? "" : "disabled"}
         src={BannerHeroData[4].icon}
-        onClick={() => setHighlight(4)}
+        onClick={() => ctx?.setSelectedGame(4)}
       />
     </Container>
   );
