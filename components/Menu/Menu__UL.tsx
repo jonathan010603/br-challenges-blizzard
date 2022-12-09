@@ -19,13 +19,12 @@ interface IProps {
 
 const Menu__UL = ({ state, setDropdown, dropdownRef }: IProps) => {
   const handleClickOutside = (e: Event) => {
-    console.log("a");
     if (dropdownRef) {
       !dropdownRef.current?.contains(e.target as HTMLElement) &&
         e.target !== document.getElementById("gamesDropdown") &&
         e.target !== document.getElementById("sportsDropdown") &&
-        document.removeEventListener("click", handleClickOutside, true);
-      setDropdown({ ...state, open: false });
+        (setDropdown({ ...state, open: false }),
+        document.removeEventListener("click", handleClickOutside, true));
     }
   };
 

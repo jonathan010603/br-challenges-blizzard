@@ -13,4 +13,10 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+module.exports = {
+  nextConfig,
+  i18n: {
+    locales: ["pt-br"],
+    defaultLocale: "pt-br",
+  },
+};
