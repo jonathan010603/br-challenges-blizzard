@@ -36,7 +36,7 @@ const Footer__BG = styled.section`
   min-height: 500px;
   position: absolute;
   background-size: cover;
-  background-image: url("/assets/footer-background.png");
+  background-image: url("/assets/footer-background.webp");
 `;
 
 const Footer__Gradient = styled.div`
