@@ -65,6 +65,7 @@ const JogosExclusivos__GameCard = ({
                 width="0"
                 height="0"
                 alt=""
+                unoptimized={true}
                 className="JogosExclusivos__BlizzardLogo"
                 src="/assets/logo-blizzard.png"
               />

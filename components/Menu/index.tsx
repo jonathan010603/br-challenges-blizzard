@@ -17,7 +17,6 @@ const Menu = () => {
     page: 1,
   });
 
-  const Menu__DropdownRef = useRef<HTMLDivElement>(null);
   const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
 
@@ -25,11 +24,7 @@ const Menu = () => {
     <Menu__Container>
       <Modal modalOpen={modalOpen} setModalOpen={setModalOpen} />
       <Menu__BlueLine></Menu__BlueLine>
-      <Menu__Dropdown
-        reference={Menu__DropdownRef}
-        state={dropdown}
-        setDropdown={setDropdown}
-      />
+      <Menu__Dropdown />
       <Menu__MobileDropdown
         open={mobileDropdownOpen}
         setMobileDropdown={setMobileDropdownOpen}
@@ -37,11 +32,7 @@ const Menu = () => {
       <Menu__Content isOpen={mobileDropdownOpen}>
         <Menu__Links>
           <Menu__Logo src="/assets/logo-blizzard.png" alt="" />
-          <Menu__UL
-            state={dropdown}
-            setDropdown={setDropdown}
-            dropdownRef={Menu__DropdownRef}
-          />
+          <Menu__UL />
         </Menu__Links>
         <Menu__Buttons setModalOpen={setModalOpen} />
         <Image

@@ -1,97 +1,98 @@
 import Image from "next/image";
-import { Dispatch, RefObject, SetStateAction, useEffect, useRef } from "react";
+import { useContext, useEffect } from "react";
 import styled from "styled-components";
+import { DropdownContext } from "../../contexts/DropdownContext";
 import { transitionsTime } from "../../data/BannerHeroData";
 import Menu__DropdownWrapper1 from "./Menu__DropdownWrapper1";
 import Menu__DropdownWrapper2 from "./Menu__DropdownWrapper2";
 
-interface IProps {
-  setDropdown: Dispatch<
-    SetStateAction<{
-      open: boolean;
-      page: number;
-    }>
-  >;
-  state: {
-    open: boolean;
-    page: number;
-  };
-  reference: RefObject<HTMLDivElement>;
+interface IContainerProps {
+  isDropdownOpen: boolean;
+  currentPage: number;
 }
 
-interface IGetDropdownState {
-  isOpen?: boolean;
-  page?: number;
+interface IBottomBarProps {
+  currentPage: number;
 }
 
-const Menu__Dropdown = ({ state, setDropdown, reference }: IProps) => {
-  return (
-    <Container isOpen={state.open} page={state.page} ref={reference}>
-      {state.page === 1 ? (
-        <Menu__DropdownWrapper1 />
-      ) : (
-        <Menu__DropdownWrapper2 />
-      )}
-      <Menu__DropdownBottomBar page={state.page}>
-        {state.page === 1 ? (
-          <ul>
-            <li>
-              <Image width={9} height={9} alt="" src="/assets/ui/every.png" />
-              Ver todos os jogos
-            </li>
-            <li>
-              <Image
-                width={24}
-                height={24}
-                alt=""
-                src="/assets/ui/battlenet-blue.png"
-              />
-              Aplicativo Battle.net
-            </li>
-            <li>
-              <Image
-                width={24}
-                height={24}
-                alt=""
-                src="/assets/ui/downloads-blue.png"
-              />
-              Downloads
-            </li>
-            <li>
-              <Image
-                width={24}
-                height={24}
-                alt=""
-                src="/assets/ui/chat-blue.png"
-              />
-              Fórum dos jogos
-            </li>
-          </ul>
+const Menu__Dropdown = () => {
+  const ctx = useContext(DropdownContext);
+
+  if (ctx) {
+    return (
+      <Container
+        ref={ctx.Menu__DropdownRef}
+        currentPage={ctx.dropdown.page}
+        isDropdownOpen={ctx.dropdown.open}
+      >
+        {ctx.dropdown.page === 1 ? (
+          <Menu__DropdownWrapper1 />
         ) : (
-          <ul>
-            <li>
-              <Image
-                width={24}
-                height={24}
-                alt=""
-                src="/assets/ui/championship.png"
-              />
-              Torneios da comunidade
-            </li>
-          </ul>
+          <Menu__DropdownWrapper2 />
         )}
-      </Menu__DropdownBottomBar>
-    </Container>
-  );
+        <Menu__DropdownBottomBar currentPage={ctx.dropdown.page}>
+          {ctx.dropdown.page === 1 ? (
+            <ul>
+              <li>
+                <Image width={9} height={9} alt="" src="/assets/ui/every.png" />
+                Ver todos os jogos
+              </li>
+              <li>
+                <Image
+                  width={24}
+                  height={24}
+                  alt=""
+                  src="/assets/ui/battlenet-blue.png"
+                />
+                Aplicativo Battle.net
+              </li>
+              <li>
+                <Image
+                  width={24}
+                  height={24}
+                  alt=""
+                  src="/assets/ui/downloads-blue.png"
+                />
+                Downloads
+              </li>
+              <li>
+                <Image
+                  width={24}
+                  height={24}
+                  alt=""
+                  src="/assets/ui/chat-blue.png"
+                />
+                Fórum dos jogos
+              </li>
+            </ul>
+          ) : (
+            <ul>
+              <li>
+                <Image
+                  width={24}
+                  height={24}
+                  alt=""
+                  src="/assets/ui/championship.png"
+                />
+                Torneios da comunidade
+              </li>
+            </ul>
+          )}
+        </Menu__DropdownBottomBar>
+      </Container>
+    );
+  } else {
+    return <></>;
+  }
 };
 
-const Container = styled.div<IGetDropdownState>`
+const Container = styled.div<IContainerProps>`
   left: 0;
   top: 0;
   z-index: 15;
   width: 100%;
-  display: ${(p) => (p.isOpen ? "flex" : "none")};
-  height: ${(p) => (p.page === 1 ? "640px" : "520px")};
+  display: ${(p) => (p.isDropdownOpen ? "flex" : "none")};
+  height: ${(p) => (p.currentPage === 1 ? "640px" : "520px")};
   position: absolute;
   flex-direction: column;
   background: linear-gradient(
@@ -108,7 +109,7 @@ const Container = styled.div<IGetDropdownState>`
   }
 `;
 
-const Menu__DropdownBottomBar = styled.div<IGetDropdownState>`
+const Menu__DropdownBottomBar = styled.div<IBottomBarProps>`
   width: 100%;
   height: 100%;
   opacity: 0.7;
@@ -139,7 +140,7 @@ const Menu__DropdownBottomBar = styled.div<IGetDropdownState>`
 
     @media only screen and (min-width: 1730px) {
       text-align: center;
-      ${(p) => p.page === 2 && "margin: 0"};
+      ${(p) => p.currentPage === 2 && "margin: 0"};
     }
 
     &:hover {

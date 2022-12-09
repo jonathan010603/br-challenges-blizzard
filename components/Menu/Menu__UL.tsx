@@ -1,78 +1,56 @@
 import Image from "next/image";
-import { Dispatch, RefObject, SetStateAction } from "react";
+import { Dispatch, RefObject, SetStateAction, useContext } from "react";
 import styled from "styled-components";
+import { DropdownContext, IDropdown } from "../../contexts/DropdownContext";
 import { transitionsTime } from "../../data/BannerHeroData";
+import useClickDropdownTriggers from "../../hooks/useClickDropdownTriggers";
 
-interface IProps {
-  setDropdown: Dispatch<
-    SetStateAction<{
-      open: boolean;
-      page: number;
-    }>
-  >;
-  state: {
-    open: boolean;
-    page: number;
-  };
-  dropdownRef: RefObject<HTMLDivElement>;
-}
+const Menu__UL = () => {
+  const ctx = useContext(DropdownContext);
 
-const Menu__UL = ({ state, setDropdown, dropdownRef }: IProps) => {
-  const handleClickOutside = (e: Event) => {
-    if (dropdownRef) {
-      !dropdownRef.current?.contains(e.target as HTMLElement) &&
-        e.target !== document.getElementById("gamesDropdown") &&
-        e.target !== document.getElementById("sportsDropdown") &&
-        (setDropdown({ ...state, open: false }),
-        document.removeEventListener("click", handleClickOutside, true));
-    }
-  };
-
-  const handleClickDropdownLinks = (page: number) => {
-    if (state.open) {
-      state.page === page
-        ? setDropdown({ open: false, page: 1 })
-        : setDropdown({ ...state, page: page });
-    } else {
-      setDropdown({ open: true, page: page });
-    }
-
-    document.addEventListener("click", handleClickOutside, true);
-  };
-
-  return (
-    <Container>
-      <Menu__LI id="gamesDropdown" onClick={() => handleClickDropdownLinks(1)}>
-        Jogos
-        <Image
-          width="0"
-          height="0"
-          alt=""
-          src={
-            state.open && state.page === 1
-              ? "/assets/ui/expand_blue.png"
-              : "/assets/ui/expand.png"
-          }
-        />
-      </Menu__LI>
-      <Menu__LI id="sportsDropdown" onClick={() => handleClickDropdownLinks(2)}>
-        Esportes
-        <Image
-          width="0"
-          height="0"
-          alt=""
-          src={
-            state.open && state.page === 2
-              ? "/assets/ui/expand_blue.png"
-              : "/assets/ui/expand.png"
-          }
-        />
-      </Menu__LI>
-      <Menu__LI>Loja</Menu__LI>
-      <Menu__LI>Notícias</Menu__LI>
-      <Menu__LI>Suporte</Menu__LI>
-    </Container>
-  );
+  if (ctx) {
+    return (
+      <Container>
+        <Menu__LI
+          id="gamesDropdown"
+          onClick={() => useClickDropdownTriggers(1, ctx)}
+        >
+          Jogos
+          <Image
+            width="0"
+            height="0"
+            alt=""
+            src={
+              ctx?.dropdown.open && ctx?.dropdown.page === 1
+                ? "/assets/ui/expand_blue.png"
+                : "/assets/ui/expand.png"
+            }
+          />
+        </Menu__LI>
+        <Menu__LI
+          id="sportsDropdown"
+          onClick={() => useClickDropdownTriggers(2, ctx)}
+        >
+          Esportes
+          <Image
+            width="0"
+            height="0"
+            alt=""
+            src={
+              ctx?.dropdown.open && ctx?.dropdown.page === 2
+                ? "/assets/ui/expand_blue.png"
+                : "/assets/ui/expand.png"
+            }
+          />
+        </Menu__LI>
+        <Menu__LI>Loja</Menu__LI>
+        <Menu__LI>Notícias</Menu__LI>
+        <Menu__LI>Suporte</Menu__LI>
+      </Container>
+    );
+  } else {
+    return <></>;
+  }
 };
 
 const Container = styled.ul`

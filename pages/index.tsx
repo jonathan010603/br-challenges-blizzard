@@ -5,6 +5,10 @@ import BannerHero from "../components/BannerHero";
 import Footer from "../components/Footer";
 import JogosExclusivos from "../components/JogosExclusivos";
 import { BannerContextWrapper } from "../contexts/BannerContext";
+import {
+  DropdownContextWrapper,
+  MobileDropdownContextContextWrapper,
+} from "../contexts/DropdownContext";
 
 const Container = styled.main`
   width: 100%;
@@ -20,7 +24,11 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Container>
-        <Menu />
+        <MobileDropdownContextContextWrapper>
+          <DropdownContextWrapper>
+            <Menu />
+          </DropdownContextWrapper>
+        </MobileDropdownContextContextWrapper>
         <BannerContextWrapper>
           <BannerHero />
         </BannerContextWrapper>
