@@ -3,7 +3,7 @@ import { Dispatch, RefObject, SetStateAction, useContext } from "react";
 import styled from "styled-components";
 import { DropdownContext, IDropdown } from "../../contexts/DropdownContext";
 import { transitionsTime } from "../../data/BannerHeroData";
-import useClickDropdownTriggers from "../../hooks/useClickDropdownTriggers";
+import clickDropdownTriggers from "../../hooks/clickDropdownTriggers";
 
 const Menu__UL = () => {
   const ctx = useContext(DropdownContext);
@@ -13,7 +13,7 @@ const Menu__UL = () => {
       <Container>
         <Menu__LI
           id="gamesDropdown"
-          onClick={() => useClickDropdownTriggers(1, ctx)}
+          onClick={() => clickDropdownTriggers(1, ctx)}
         >
           Jogos
           <Image
@@ -29,7 +29,7 @@ const Menu__UL = () => {
         </Menu__LI>
         <Menu__LI
           id="sportsDropdown"
-          onClick={() => useClickDropdownTriggers(2, ctx)}
+          onClick={() => clickDropdownTriggers(2, ctx)}
         >
           Esportes
           <Image

@@ -1,6 +1,6 @@
 import { IDropdown } from "../contexts/DropdownContext";
 
-const useClickDropdownTriggers = (page: number, dropdownCtx: IDropdown) => {
+const clickDropdownTriggers = (page: number, dropdownCtx: IDropdown) => {
   const openDropdown = () => dropdownCtx.setDropdown({ open: true, page: page });
   const closeDropdown = () => {
     dropdownCtx.setDropdown({ ...dropdownCtx.dropdown, open: false });
@@ -28,4 +28,4 @@ const useClickDropdownTriggers = (page: number, dropdownCtx: IDropdown) => {
   }
 };
 
-export default useClickDropdownTriggers;
+export default clickDropdownTriggers;
