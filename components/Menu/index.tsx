@@ -36,7 +36,7 @@ const Menu = () => {
       />
       <Menu__Content isOpen={mobileDropdownOpen}>
         <Menu__Links>
-          <Menu__Logo src="/assets/logo-blizzard.png" />
+          <Menu__Logo src="/assets/logo-blizzard.png" alt="" />
           <Menu__UL
             state={dropdown}
             setDropdown={setDropdown}

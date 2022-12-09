@@ -16,7 +16,7 @@ const Footer__Content = () => {
 
   return (
     <Container>
-      <Footer__Battlenet src="/assets/logo-battle-net.png" />
+      <Footer__Battlenet src="/assets/logo-battle-net.png" alt="" />
       <Footer__MainText>Baixe agora o battle.net</Footer__MainText>
       <Footer__SubTexts>
         <li>

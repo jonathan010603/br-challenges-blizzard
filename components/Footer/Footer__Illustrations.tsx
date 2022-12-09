@@ -3,13 +3,13 @@ import styled from "styled-components";
 const Footer__Illustrations = () => {
   return (
     <Container>
-      <Footer__AppIllustration
-        loading="lazy"
-        src="/assets/illustrations/app.webp"
+      <Footer__AppIllustration 
+        src="/assets/illustrations/app.webp" 
+        alt="" 
       />
       <Footer__AppMiniIllustration
-        loading="lazy"
-        src="/assets/illustrations/app-mini.webp"
+        src="/assets/illustrations/app-mini.webp" 
+        alt=""
       />
     </Container>
   );
