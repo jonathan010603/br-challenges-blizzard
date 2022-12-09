@@ -108,7 +108,7 @@ const Container = styled.div`
   max-height: 600px;
   min-height: 300px;
   flex-direction: column;
-  background-image: url("/assets/illustrations/loginBG.png");
+  background-image: url("/assets/illustrations/loginBG.webp");
 
   @media only screen and (max-width: 600px) {
     width: 70vw;

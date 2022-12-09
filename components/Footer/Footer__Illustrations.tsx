@@ -5,11 +5,11 @@ const Footer__Illustrations = () => {
     <Container>
       <Footer__AppIllustration
         loading="lazy"
-        src="/assets/illustrations/app.png"
+        src="/assets/illustrations/app.webp"
       />
       <Footer__AppMiniIllustration
         loading="lazy"
-        src="/assets/illustrations/app-mini.png"
+        src="/assets/illustrations/app-mini.webp"
       />
     </Container>
   );
