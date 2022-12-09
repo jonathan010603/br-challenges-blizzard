@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, RefObject, SetStateAction } from "react";
 import styled from "styled-components";
 import { transitionsTime } from "../../data/BannerHeroData";
 
@@ -14,9 +14,21 @@ interface IProps {
     open: boolean;
     page: number;
   };
+  dropdownRef: RefObject<HTMLDivElement>;
 }
 
-const Menu__UL = ({ state, setDropdown }: IProps) => {
+const Menu__UL = ({ state, setDropdown, dropdownRef }: IProps) => {
+  const handleClickOutside = (e: Event) => {
+    console.log("a");
+    if (dropdownRef) {
+      !dropdownRef.current?.contains(e.target as HTMLElement) &&
+        e.target !== document.getElementById("gamesDropdown") &&
+        e.target !== document.getElementById("sportsDropdown") &&
+        document.removeEventListener("click", handleClickOutside, true);
+      setDropdown({ ...state, open: false });
+    }
+  };
+
   const handleClickDropdownLinks = (page: number) => {
     if (state.open) {
       state.page === page
@@ -25,6 +37,8 @@ const Menu__UL = ({ state, setDropdown }: IProps) => {
     } else {
       setDropdown({ open: true, page: page });
     }
+
+    document.addEventListener("click", handleClickOutside, true);
   };
 
   return (

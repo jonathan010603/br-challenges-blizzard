@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Dispatch, SetStateAction, useEffect, useRef } from "react";
+import { Dispatch, RefObject, SetStateAction, useEffect, useRef } from "react";
 import styled from "styled-components";
 import { transitionsTime } from "../../data/BannerHeroData";
 import Menu__DropdownWrapper1 from "./Menu__DropdownWrapper1";
@@ -16,6 +16,7 @@ interface IProps {
     open: boolean;
     page: number;
   };
+  reference: RefObject<HTMLDivElement>;
 }
 
 interface IGetDropdownState {
@@ -23,24 +24,9 @@ interface IGetDropdownState {
   page?: number;
 }
 
-const Menu__Dropdown = ({ state, setDropdown }: IProps) => {
-  const Menu__DropdownRef = useRef<HTMLDivElement>(null);
-
-  const handleClickOutside = (e: Event) => {
-    if (Menu__DropdownRef) {
-      !Menu__DropdownRef.current?.contains(e.target as HTMLElement) &&
-        e.target !== document.getElementById("gamesDropdown") &&
-        e.target !== document.getElementById("sportsDropdown") &&
-        setDropdown({ ...state, open: false });
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener("click", handleClickOutside, true);
-  }, [handleClickOutside]);
-
+const Menu__Dropdown = ({ state, setDropdown, reference }: IProps) => {
   return (
-    <Container isOpen={state.open} page={state.page} ref={Menu__DropdownRef}>
+    <Container isOpen={state.open} page={state.page} ref={reference}>
       {state.page === 1 ? (
         <Menu__DropdownWrapper1 />
       ) : (
