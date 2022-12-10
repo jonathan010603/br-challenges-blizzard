@@ -21,7 +21,7 @@ export const BannerHeroData = [
   },
   {
     animationCover: "/assets/games/wow-animation-cover.webp",
-    animationGif: "/assets/games/wow-animation.webp",
+    animationGif: "/assets/games/wow-animation.gif",
     logo: "/assets/games/wow-logo.webp",
     bg: "/assets/games/wow-bg.webp",
     icon: "/assets/icons/wow-icon.webp",

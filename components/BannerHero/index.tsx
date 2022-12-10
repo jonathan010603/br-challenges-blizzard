@@ -1,9 +1,6 @@
-import { ReactNode, useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import styled from "styled-components";
-import {
-  BannerContext,
-  BannerContextWrapper,
-} from "../../contexts/BannerContext";
+import { BannerContext } from "../../contexts/BannerContext";
 import {
   BannerBgPositions,
   BannerHeroData,
