@@ -17,32 +17,34 @@ const Menu = () => {
 
   if (ctx) {
     return (
-      <Menu__Container>
-        <Modal />
-        <Menu__BlueLine></Menu__BlueLine>
-        <Menu__Dropdown />
+      <>
         <Menu__MobileDropdown />
-        <Menu__Content isOpen={ctx.mobileDropdownOpen}>
-          <Menu__Links>
-            <Menu__Logo src="/assets/logo-blizzard.png" alt="" />
-            <Menu__UL />
-          </Menu__Links>
-          <Menu__Buttons />
-          <Image
-            width={28}
-            height={18.67}
-            alt=""
-            className="Menu__burger"
-            id="burgerDropdown"
-            src={
-              ctx.mobileDropdownOpen
-                ? "/assets/ui/close.png"
-                : "/assets/ui/burger.png"
-            }
-            onClick={() => ctx.setMobileDropdownOpen(!ctx.mobileDropdownOpen)}
-          />
-        </Menu__Content>
-      </Menu__Container>
+        <Menu__Dropdown />
+        <Menu__Container>
+          <Modal />
+          <Menu__BlueLine></Menu__BlueLine>
+          <Menu__Content isOpen={ctx.mobileDropdownOpen}>
+            <Menu__Links>
+              <Menu__Logo src="/assets/logo-blizzard.png" alt="" />
+              <Menu__UL />
+            </Menu__Links>
+            <Menu__Buttons />
+            <Image
+              width={28}
+              height={18.67}
+              alt=""
+              className="Menu__burger"
+              id="burgerDropdown"
+              src={
+                ctx.mobileDropdownOpen
+                  ? "/assets/ui/close.png"
+                  : "/assets/ui/burger.png"
+              }
+              onClick={() => ctx.setMobileDropdownOpen(!ctx.mobileDropdownOpen)}
+            />
+          </Menu__Content>
+        </Menu__Container>
+      </>
     );
   } else {
     return <></>;
