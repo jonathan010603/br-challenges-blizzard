@@ -1,77 +1,79 @@
 import Image from "next/image";
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction, useContext } from "react";
 import styled from "styled-components";
-
-interface IProps {
-  modalOpen?: boolean;
-  setModalOpen: Dispatch<SetStateAction<boolean>>;
-}
+import { ModalContext } from "../../contexts/ModalContext";
 
 interface IModal__ExternalContainerProps {
   modalOpen?: boolean;
 }
 
-const Modal = ({ modalOpen, setModalOpen }: IProps) => {
-  return (
-    <ExternalContainer modalOpen={modalOpen}>
-      <Container>
-        <Image
-          unoptimized={true}
-          width={32}
-          height={32}
-          alt=""
-          className="Modal__close"
-          src="/assets/ui/close_modal.png"
-          onClick={() => setModalOpen(false)}
-        />
-        <Modal__Content>
+const Modal = () => {
+  const ctx = useContext(ModalContext);
+
+  if (ctx) {
+    return (
+      <ExternalContainer modalOpen={ctx.modalOpen}>
+        <Container>
           <Image
             unoptimized={true}
-            width="0"
-            height="0"
+            width={32}
+            height={32}
             alt=""
-            className="Modal__logo"
-            src="/assets/logo-battle-net.png"
+            className="Modal__close"
+            src="/assets/ui/close_modal.png"
+            onClick={() => ctx.setModalOpen(false)}
           />
-          <Modal__Input placeholder="E-mail ou telefone" />
-          <Modal__Input placeholder="Senha" type="password" />
-          <Modal__Button>Conectar-se</Modal__Button>
-          <Modal__AlternateLogin>
-            <span>ou conecte-se com</span>
-            <div>
-              <Image
-                unoptimized={true}
-                width="0"
-                height="0"
-                alt=""
-                src="/assets/ui/google.png"
-              />
-              <Image
-                unoptimized={true}
-                width="0"
-                height="0"
-                alt=""
-                src="/assets/ui/apple.png"
-              />
-              <Image
-                unoptimized={true}
-                width="0"
-                height="0"
-                alt=""
-                src="/assets/ui/facebook.png"
-              />
-            </div>
-          </Modal__AlternateLogin>
-          <Modal__Links>
-            <div>
-              <span>Crie uma conta </span>Battle.net de graça
-            </div>
-            <span>Não consegue logar?</span>
-          </Modal__Links>
-        </Modal__Content>
-      </Container>
-    </ExternalContainer>
-  );
+          <Modal__Content>
+            <Image
+              unoptimized={true}
+              width="0"
+              height="0"
+              alt=""
+              className="Modal__logo"
+              src="/assets/logo-battle-net.png"
+            />
+            <Modal__Input placeholder="E-mail ou telefone" />
+            <Modal__Input placeholder="Senha" type="password" />
+            <Modal__Button>Conectar-se</Modal__Button>
+            <Modal__AlternateLogin>
+              <span>ou conecte-se com</span>
+              <div>
+                <Image
+                  unoptimized={true}
+                  width="0"
+                  height="0"
+                  alt=""
+                  src="/assets/ui/google.png"
+                />
+                <Image
+                  unoptimized={true}
+                  width="0"
+                  height="0"
+                  alt=""
+                  src="/assets/ui/apple.png"
+                />
+                <Image
+                  unoptimized={true}
+                  width="0"
+                  height="0"
+                  alt=""
+                  src="/assets/ui/facebook.png"
+                />
+              </div>
+            </Modal__AlternateLogin>
+            <Modal__Links>
+              <div>
+                <span>Crie uma conta </span>Battle.net de graça
+              </div>
+              <span>Não consegue logar?</span>
+            </Modal__Links>
+          </Modal__Content>
+        </Container>
+      </ExternalContainer>
+    );
+  } else {
+    return <></>;
+  }
 };
 
 const ExternalContainer = styled.div<IModal__ExternalContainerProps>`

@@ -1,6 +1,7 @@
 import Image from "next/image";
-import { Dispatch, SetStateAction, useEffect, useRef } from "react";
+import { Dispatch, SetStateAction, useContext, useEffect, useRef } from "react";
 import styled from "styled-components";
+import { MobileDropdownContext } from "../../contexts/DropdownContext";
 
 interface IProps {
   setMobileDropdown: Dispatch<SetStateAction<boolean>>;
@@ -12,14 +13,14 @@ interface IGetDropdownState {
   page?: number;
 }
 
-const Menu__MobileDropdown = ({ open, setMobileDropdown }: IProps) => {
-  const Menu__MobileDropdownRef = useRef<HTMLDivElement>(null);
+const Menu__MobileDropdown = () => {
+  const ctx = useContext(MobileDropdownContext);
 
   const handleClickOutside = (e: Event) => {
-    if (Menu__MobileDropdownRef) {
-      !Menu__MobileDropdownRef.current?.contains(e.target as HTMLElement) &&
+    if (ctx?.Menu__MobileDropdownRef) {
+      !ctx?.Menu__MobileDropdownRef.current?.contains(e.target as HTMLElement) &&
         e.target !== document.getElementById("burgerDropdown") &&
-        setMobileDropdown(false);
+        ctx.setMobileDropdownOpen(false);
     }
   };
 
@@ -28,7 +29,7 @@ const Menu__MobileDropdown = ({ open, setMobileDropdown }: IProps) => {
   }, [handleClickOutside]);
 
   return (
-    <Container isOpen={open} ref={Menu__MobileDropdownRef}>
+    <Container isOpen={ctx?.mobileDropdownOpen} ref={ctx?.Menu__MobileDropdownRef}>
       <Menu__MobileStdUl>
         <li>Loja</li>
         <li>Notícias</li>

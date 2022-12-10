@@ -1,25 +1,28 @@
 import Image from "next/image";
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction, useContext } from "react";
 import styled from "styled-components";
+import { ModalContext } from "../../contexts/ModalContext";
 import { transitionsTime } from "../../data/BannerHeroData";
 
-interface IProps {
-  setModalOpen: Dispatch<SetStateAction<boolean>>;
-}
-
-const Menu__Buttons = ({ setModalOpen }: IProps) => {
-  return (
-    <Container>
-      <Menu__Signup className="Menu__SignupButton">Criar conta</Menu__Signup>
-      <Menu__Login
-        className="Menu__LoginButton"
-        onClick={() => setModalOpen(true)}
-      >
-        <Image width="0" height="0" alt="" src="/assets/ui/login.png" />
-        Logar
-      </Menu__Login>
-    </Container>
-  );
+const Menu__Buttons = () => {
+  const ctx = useContext(ModalContext);
+  
+  if (ctx) {
+    return (
+      <Container>
+        <Menu__Signup className="Menu__SignupButton">Criar conta</Menu__Signup>
+        <Menu__Login
+          className="Menu__LoginButton"
+          onClick={() => ctx.setModalOpen(true)}
+        >
+          <Image width="0" height="0" alt="" src="/assets/ui/login.png" />
+          Logar
+        </Menu__Login>
+      </Container>
+    );
+  } else {
+    return <></>;
+  }
 };
 
 const Container = styled.div`

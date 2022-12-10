@@ -9,6 +9,7 @@ import {
   DropdownContextWrapper,
   MobileDropdownContextContextWrapper,
 } from "../contexts/DropdownContext";
+import { ModalContextWrapper } from "../contexts/ModalContext";
 
 const Container = styled.main`
   width: 100%;
@@ -26,7 +27,9 @@ const Home = () => {
       <Container>
         <MobileDropdownContextContextWrapper>
           <DropdownContextWrapper>
-            <Menu />
+            <ModalContextWrapper>
+              <Menu />
+            </ModalContextWrapper>
           </DropdownContextWrapper>
         </MobileDropdownContextContextWrapper>
         <BannerContextWrapper>

@@ -1,6 +1,7 @@
 import Image from "next/image";
-import { useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import styled from "styled-components";
+import { MobileDropdownContext } from "../../contexts/DropdownContext";
 import Modal from "../Modal";
 import Menu__Buttons from "./Menu__Buttons";
 import Menu__Dropdown from "./Menu__Dropdown";
@@ -12,45 +13,40 @@ interface IGetMobileDropdownState {
 }
 
 const Menu = () => {
-  const [dropdown, setDropdown] = useState({
-    open: false,
-    page: 1,
-  });
+  const ctx = useContext(MobileDropdownContext);
 
-  const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
-  const [modalOpen, setModalOpen] = useState(false);
-
-  return (
-    <Menu__Container>
-      <Modal modalOpen={modalOpen} setModalOpen={setModalOpen} />
-      <Menu__BlueLine></Menu__BlueLine>
-      <Menu__Dropdown />
-      <Menu__MobileDropdown
-        open={mobileDropdownOpen}
-        setMobileDropdown={setMobileDropdownOpen}
-      />
-      <Menu__Content isOpen={mobileDropdownOpen}>
-        <Menu__Links>
-          <Menu__Logo src="/assets/logo-blizzard.png" alt="" />
-          <Menu__UL />
-        </Menu__Links>
-        <Menu__Buttons setModalOpen={setModalOpen} />
-        <Image
-          width={28}
-          height={18.67}
-          alt=""
-          className="Menu__burger"
-          id="burgerDropdown"
-          src={
-            mobileDropdownOpen
-              ? "/assets/ui/close.png"
-              : "/assets/ui/burger.png"
-          }
-          onClick={() => setMobileDropdownOpen(!mobileDropdownOpen)}
-        />
-      </Menu__Content>
-    </Menu__Container>
-  );
+  if (ctx) {
+    return (
+      <Menu__Container>
+        <Modal />
+        <Menu__BlueLine></Menu__BlueLine>
+        <Menu__Dropdown />
+        <Menu__MobileDropdown />
+        <Menu__Content isOpen={ctx.mobileDropdownOpen}>
+          <Menu__Links>
+            <Menu__Logo src="/assets/logo-blizzard.png" alt="" />
+            <Menu__UL />
+          </Menu__Links>
+          <Menu__Buttons />
+          <Image
+            width={28}
+            height={18.67}
+            alt=""
+            className="Menu__burger"
+            id="burgerDropdown"
+            src={
+              ctx.mobileDropdownOpen
+                ? "/assets/ui/close.png"
+                : "/assets/ui/burger.png"
+            }
+            onClick={() => ctx.setMobileDropdownOpen(!ctx.mobileDropdownOpen)}
+          />
+        </Menu__Content>
+      </Menu__Container>
+    );
+  } else {
+    return <></>;
+  }
 };
 
 const Menu__Container = styled.section`
