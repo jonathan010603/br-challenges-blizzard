@@ -16,9 +16,9 @@ Para facilitar a codificação do projeto foi usado um protótipo do figma como 
 
 ## 🚀 Tecnologias
 
-- [NextJS]
-- [Context API]
-- [Styled Components]
+- NextJS
+- Context API
+- Styled Components
 
 ## 📝 Requisitos do desafio
 
