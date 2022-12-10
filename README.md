@@ -6,6 +6,8 @@
   <img src=".github/preview.png" width="100%" />
 </p>
 
+## 🌐 Deploy: https://br-challenges-blizzard.vercel.app/
+
 ## 💻 Projeto
 
 Esse projeto é uma landing page da empresa **Blizzard**, ela é composta por um menu de navegação, um banner hero com as informações dos principais jogos da empresa(Diablo, HearthStone e World of Warcraft), a listagem dos jogos exclusivos e um rodapé com informações do download do app battle.net.
