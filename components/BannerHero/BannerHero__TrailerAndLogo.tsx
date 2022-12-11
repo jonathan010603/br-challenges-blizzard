@@ -66,7 +66,6 @@ const Container = styled.div`
 
   .Banner__Logo {
     max-width: 280px;
-    min-width: 154px;
     min-height: 154px;
   }
 
