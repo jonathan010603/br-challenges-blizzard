@@ -33,6 +33,7 @@ const Footer__Container = styled.footer`
 const Footer__BG = styled.section`
   z-index: 1;
   width: 100%;
+  height: 100%;
   min-height: 500px;
   position: absolute;
   background-size: cover;

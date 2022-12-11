@@ -20,15 +20,15 @@ const Footer__Content = () => {
       <Footer__MainText>Baixe agora o battle.net</Footer__MainText>
       <Footer__SubTexts>
         <li>
-          <Image width="0" height="0" alt="" src="/assets/ui/onePlace.png" />
+          <Image width="18" height="18" alt="" src="/assets/ui/onePlace.png" />
           Seus jogos em um só lugar
         </li>
         <li>
-          <Image width="0" height="0" alt="" src="/assets/ui/friends.png" />
+          <Image width="18" height="18" alt="" src="/assets/ui/friends.png" />
           Conecte-se aos seus amigos
         </li>
         <li>
-          <Image width="0" height="0" alt="" src="/assets/ui/buy.png" />
+          <Image width="18" height="18" alt="" src="/assets/ui/buy.png" />
           Compre jogos e itens digitais
         </li>
       </Footer__SubTexts>
@@ -103,6 +103,7 @@ const Footer__SubTexts = styled.ul`
   li {
     min-width: 308px;
     display: flex;
+    align-items: center;
     font-weight: 400;
     font-size: 18px;
     line-height: 178.2%;
