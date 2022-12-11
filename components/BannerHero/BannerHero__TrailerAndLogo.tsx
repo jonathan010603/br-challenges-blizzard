@@ -14,7 +14,7 @@ const Banner__TrailerAndLogo = () => {
     return (
       <Container>
         <Image
-          width="0"
+          width="280"
           height="0"
           alt=""
           className="Banner__Logo"
@@ -66,6 +66,7 @@ const Container = styled.div`
 
   .Banner__Logo {
     max-width: 280px;
+    min-width: 154px;
     min-height: 154px;
   }
 
